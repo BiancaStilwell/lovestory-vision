@@ -35,6 +35,18 @@ Create and publish a simple, professional **portfolio / work** website with **no
 
 ---
 
+## Locked Preferences (Do Not Change)
+
+Use this section to record Bianca‑approved choices that must stay exactly as‑is unless she explicitly asks to change them. Treat these as immutable during refactors or redesigns.
+
+- How to use: when Bianca says “add this to the locked list,” append a new bullet with the date and a short note. Only Bianca can approve removals/edits here.
+
+Current locked items:
+- 2025‑08‑29 — Font: “Amarante” applied to landing page bubbles, heart badge, and all `.cta` buttons.
+- 2025‑08‑29 — Landing layout: full‑bleed splash with circular floating buttons (About, Portfolio, Contact, Download Tearsheet) and a central dark heart CTA.
+
+---
+
 ## How to Talk to Bianca
 
 * Let Bianca describe what she wants in plain language. Implement directly.
@@ -223,4 +235,3 @@ Then say something like:
 > “Make me a one‑page portfolio called **Bianca Rivera** with a warm, cozy vibe. I want a hero, a projects section, an about blurb, and a big email button.”
 
 The agent should scaffold, preview locally, then guide publishing to GitHub Pages.
-
