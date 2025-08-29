@@ -4,6 +4,8 @@ Replace these placeholders when ready. Keys match inline HTML comments.
 
 - hero.name — Site/brand name (index.html, header across pages)
 - hero.tagline — Landing headline (index.html)
+- hero.badge — Center badge text (index.html)
+- hero.image — Add `assets/img/hero.jpg` for landing background (optional)
 - meta.title — Browser title (index.html)
 - meta.description — Meta description (index.html)
 - footer.name — Footer credit name (index + pages)
@@ -18,4 +20,3 @@ Replace these placeholders when ready. Keys match inline HTML comments.
 Assets pending:
 - assets/docs/tearsheet.pdf — Provide final tear sheet PDF (linked in header + hero)
 - assets/img/_INBOX/* — Add portfolio images; I will optimize and place
-

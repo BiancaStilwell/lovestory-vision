@@ -15,34 +15,31 @@
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
 
-    <header class="site-header" role="banner">
+    <header class="site-header splash-header" role="banner">
       <div class="wrap">
         <a class="brand" href="/">
           <span class="brand-mark" aria-hidden="true">◐</span>
           <span class="brand-name"><!-- TODO:COPY hero.name -->Bianca</span>
         </a>
-        <nav aria-label="Main" class="main-nav">
-          <ul>
-            <li><a href="pages/portfolio.html">Portfolio</a></li>
-            <li><a href="pages/about.html">About</a></li>
-            <li><a href="pages/contact.html">Contact</a></li>
-            <li><a href="assets/docs/tearsheet.pdf" download>Download Tearsheet</a></li>
-          </ul>
-        </nav>
       </div>
     </header>
 
-    <main id="main" class="hero" tabindex="-1">
-      <div class="hero-inner wrap">
-        <h1 class="hero-title"><!-- TODO:COPY hero.tagline -->medieval methods of modern self‑reflection</h1>
-        <p class="hero-sub">Custom leather mirrors, lighting, and tables. Raw, mystical, medieval—yet unmistakably contemporary.</p>
+    <main id="main" class="splash" tabindex="-1" aria-label="Landing">
+      <div class="bg" aria-hidden="true"></div>
 
-        <div class="hero-actions">
-          <a class="cta" href="pages/portfolio.html">Enter Portfolio</a>
-          <a class="cta ghost" href="assets/docs/tearsheet.pdf" download>Download Tearsheet</a>
-        </div>
-      </div>
-      <div class="hero-graphic" aria-hidden="true"></div>
+      <h1 class="visually-hidden"><!-- TODO:COPY hero.tagline -->medieval methods of modern self‑reflection</h1>
+
+      <nav class="bubbles" aria-label="Primary">
+        <a class="bubble lime pos-tl" href="pages/about.html"><span>About</span></a>
+        <a class="bubble blue pos-tr" href="pages/portfolio.html"><span>Portfolio</span></a>
+        <a class="bubble blue pos-bl" href="pages/contact.html"><span>Contact</span></a>
+        <a class="bubble lime pos-br" href="assets/docs/tearsheet.pdf" download><span>Download<br>Tearsheet</span></a>
+      </nav>
+
+      <a class="heart-cta" href="pages/portfolio.html" aria-label="Enter portfolio">
+        <span class="heart-shape" aria-hidden="true"></span>
+        <span class="heart-text"><!-- TODO:COPY hero.badge -->Enter Portfolio</span>
+      </a>
     </main>
 
     <footer class="site-footer">
