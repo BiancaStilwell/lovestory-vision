@@ -31,7 +31,7 @@
 
       <!-- Chaotic marginalia: doodles morph to glowing letters on hover -->
       <nav class="marginalia-grid" aria-label="Primary">
-        <a class="m-link" href="pages/about.html" style="--dur:7s;--delay:-1s;--hue:40deg;" data-letter="A">
+        <a class="m-link" href="pages/about.html" style="--dur:7s;--delay:-1s;--hue:40deg;" data-letter="A" data-word="About">
           <span class="doodle" aria-hidden="true">
             <!-- Weird snail with feet → psychedelic -->
             <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img">
@@ -59,11 +59,11 @@
               </g>
             </svg>
           </span>
-          <span class="letter" aria-hidden="true">A</span>
+          <span class="word" aria-hidden="true">About</span>
           <span class="visually-hidden">About</span>
         </a>
 
-        <a class="m-link" href="pages/portfolio.html" style="--dur:6.6s;--delay:-2s;--hue:310deg;" data-letter="P">
+        <a class="m-link" href="pages/portfolio.html" style="--dur:6.6s;--delay:-2s;--hue:310deg;" data-letter="P" data-word="Portfolio">
           <span class="doodle" aria-hidden="true">
             <!-- Scary rabbit with sword -->
             <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img">
@@ -92,11 +92,11 @@
               </g>
             </svg>
           </span>
-          <span class="letter" aria-hidden="true">P</span>
+          <span class="word" aria-hidden="true">Portfolio</span>
           <span class="visually-hidden">Portfolio</span>
         </a>
 
-        <a class="m-link" href="pages/contact.html" style="--dur:7.4s;--delay:-3s;--hue:120deg;" data-letter="C">
+        <a class="m-link" href="pages/contact.html" style="--dur:7.4s;--delay:-3s;--hue:120deg;" data-letter="C" data-word="Contact">
           <span class="doodle" aria-hidden="true">
             <!-- Monk with oversized head, halo -->
             <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img">
@@ -118,11 +118,11 @@
               </g>
             </svg>
           </span>
-          <span class="letter" aria-hidden="true">C</span>
+          <span class="word" aria-hidden="true">Contact</span>
           <span class="visually-hidden">Contact</span>
         </a>
 
-        <a class="m-link" href="pages/contact.html#tearsheet" style="--dur:6.8s;--delay:-1.6s;--hue:260deg;" data-letter="T">
+        <a class="m-link" href="pages/contact.html#tearsheet" style="--dur:6.8s;--delay:-1.6s;--hue:260deg;" data-letter="T" data-word="Tear Sheet">
           <span class="doodle" aria-hidden="true">
             <!-- Winged beast / chimera -->
             <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img">
@@ -141,13 +141,15 @@
               </g>
             </svg>
           </span>
-          <span class="letter" aria-hidden="true">T</span>
+          <span class="word" aria-hidden="true">Tear Sheet</span>
           <span class="visually-hidden">Tear Sheet</span>
         </a>
       </nav>
     </main>
 
     <!-- Footer copyright removed per request -->
+
+      <div class="word-explode" id="word-explode" aria-hidden="true"><div class="text"></div></div>
 
     <script type="module">
       // Pixel sword cursor (disabled for marginalia experiment)
@@ -198,6 +200,30 @@
         }
         frame();
       }
+
+      // Exploding word overlay on hover/focus
+      const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const overlay = document.getElementById('word-explode');
+      const overlayText = overlay?.querySelector('.text');
+      function showWord(word){
+        if (!overlay || !overlayText || reduce) return;
+        overlay.classList.remove('hide');
+        overlay.classList.add('show');
+        overlayText.textContent = word;
+      }
+      function hideWord(){
+        if (!overlay || !overlayText || reduce) return;
+        overlay.classList.remove('show');
+        overlay.classList.add('hide');
+        setTimeout(()=>{ overlay.classList.remove('hide'); overlay.style.display='none'; overlay.offsetHeight; overlay.style.display=''; }, 450);
+      }
+      document.querySelectorAll('.m-link').forEach((link)=>{
+        const word = link.getAttribute('data-word');
+        link.addEventListener('mouseenter', ()=> showWord(word));
+        link.addEventListener('focus', ()=> showWord(word));
+        link.addEventListener('mouseleave', hideWord);
+        link.addEventListener('blur', hideWord);
+      });
     </script>
   </body>
 </html>

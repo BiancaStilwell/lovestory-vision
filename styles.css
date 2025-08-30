@@ -82,8 +82,8 @@ input, button, select, textarea { font: inherit; }
 .m-link { --bd: var(--dur,6s); --glow: #ff00ee; position: relative; display: grid; place-items: center; width: clamp(180px, 26vw, 280px); aspect-ratio: 1/1; text-decoration: none; color: #111; animation: breathe var(--bd) ease-in-out infinite var(--delay,0s); }
 .m-link .doodle { position: absolute; inset: 0; display: grid; place-items: center; transition: transform .6s ease, opacity .6s ease, filter .6s ease; filter: hue-rotate(var(--hue, 0deg)) saturate(1.4) contrast(1.1); }
 .m-link .doodle svg { width: 86%; height: 86%; filter: drop-shadow(0 6px 20px rgba(0,0,0,0.15)); animation: wiggle calc(var(--bd) * 1.1) ease-in-out infinite alternate; }
-.m-link .letter { position: absolute; inset: 0; display: grid; place-items: center; font-family: var(--font-display); font-size: clamp(100px, 20vw, 220px); line-height: 1; letter-spacing: 0.01em; opacity: 0; transform: scale(0.8) rotate(-2deg); transition: transform .6s cubic-bezier(.2,.8,.2,1), opacity .6s ease, filter .4s ease; background: conic-gradient(from 0deg, #ff00ee, #ffdd00, #00ffd5, #b400ff, #ff00ee); -webkit-background-clip: text; background-clip: text; color: transparent; filter: drop-shadow(0 0 12px rgba(255,0,238,.35)) drop-shadow(0 0 24px rgba(255,221,0,.25)); }
-.m-link:hover .letter, .m-link:focus .letter { opacity: 1; transform: scale(1) rotate(0deg); animation: glowPulse 2.6s ease-in-out infinite; }
+.m-link .word { position: absolute; inset: 0; display: grid; place-items: center; font-family: var(--font-display); font-size: clamp(40px, 6.5vw, 80px); line-height: 1; text-transform: none; letter-spacing: 0.01em; opacity: 0; transform: scale(0.9) rotate(-2deg); transition: transform .5s cubic-bezier(.2,.8,.2,1), opacity .5s ease, filter .4s ease; background: conic-gradient(from 0deg, #ff00ee, #ffdd00, #00ffd5, #b400ff, #ff00ee); -webkit-background-clip: text; background-clip: text; color: transparent; filter: drop-shadow(0 0 12px rgba(255,0,238,.35)) drop-shadow(0 0 24px rgba(255,221,0,.25)); text-align: center; padding: 8px; }
+.m-link:hover .word, .m-link:focus .word { opacity: 1; transform: scale(1) rotate(0deg); animation: glowPulse 2.2s ease-in-out infinite; }
 .m-link:hover .doodle, .m-link:focus .doodle { opacity: .15; transform: scale(.9) rotate(-6deg); filter: blur(1px) contrast(1.2) saturate(1.2); }
 
 @keyframes breathe { 0%,100% { transform: scale(1); } 50% { transform: scale(1.025); } }
@@ -102,6 +102,15 @@ input, button, select, textarea { font: inherit; }
 @media (max-width: 720px) {
   .marginalia-grid { grid-template-columns: 1fr; min-height: 86vh; }
 }
+
+/* Full-screen exploding word overlay */
+.word-explode { position: fixed; inset: 0; display: none; align-items: center; justify-content: center; z-index: 6; pointer-events: none; }
+.word-explode .text { font-family: var(--font-display); font-weight: 800; text-transform: none; background: conic-gradient(from 0deg, #ff00ee, #ffd400, #00ffd5, #b400ff, #ff00ee); -webkit-background-clip: text; background-clip: text; color: transparent; text-align: center; line-height: .92; filter: drop-shadow(0 0 20px rgba(255,0,238,.35)) drop-shadow(0 0 50px rgba(255,221,0,.25)); opacity: 0; transform: scale(.6) rotate(-1deg); }
+.word-explode.show { display: flex; }
+.word-explode.show .text { animation: boomIn .7s cubic-bezier(.2,.8,.2,1) forwards, glowPulse 2.6s ease-in-out infinite .7s; font-size: clamp(48px, 28vw, 300px); }
+.word-explode.hide .text { animation: boomOut .45s ease forwards; }
+@keyframes boomIn { 0% { opacity: 0; transform: scale(.6) rotate(-2deg); } 100% { opacity: 1; transform: scale(1.2) rotate(0deg); } }
+@keyframes boomOut { 0% { opacity: 1; transform: scale(1.2); } 100% { opacity: 0; transform: scale(0.85); } }
 
 /* Landing brand title */
 .ls-brand {
