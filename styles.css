@@ -111,15 +111,10 @@ input, button, select, textarea { font: inherit; }
 @keyframes boomIn { 0% { opacity: 0; transform: scale(.6) rotate(-2deg); } 100% { opacity: 1; transform: scale(1.2) rotate(0deg); } }
 @keyframes boomOut { 0% { opacity: 1; transform: scale(1.2); } 100% { opacity: 0; transform: scale(0.85); } }
 
-/* Landing brand title */
-.ls-brand {
-  position: absolute; top: 16px; left: 20px; z-index: 4;
-  font-family: var(--font-display); font-weight: 700; letter-spacing: 0.01em;
-  font-size: clamp(18px, 2.6vw, 28px);
-  color: #111;
-  background: rgba(255,255,255,0.9);
-  padding: 6px 10px; border-radius: 6px;
-}
+/* Landing brand title — centered */
+.ls-brand { position: absolute; inset: 0; z-index: 3; display: grid; place-items: center; text-align: center; pointer-events: none; }
+.ls-title { font-family: var(--font-display); font-weight: 800; letter-spacing: 0.02em; font-size: clamp(42px, 9vw, 120px); color: var(--text); text-shadow: 0 2px 12px rgba(255,255,255,0.6), 0 8px 30px rgba(0,0,0,0.2); line-height: 0.9; }
+.ls-sub { font-family: var(--font-display); font-weight: 400; letter-spacing: 0.02em; font-size: clamp(14px, 2.6vw, 28px); color: var(--text); opacity: 0.9; text-shadow: 0 2px 10px rgba(255,255,255,0.5), 0 6px 20px rgba(0,0,0,0.18); margin-top: 8px; }
 
 .bubbles { position: relative; z-index: 2; height: 100vh; }
 .bubble { position: absolute; display: grid; place-items: center; width: clamp(120px, 14vw, 180px); aspect-ratio: 1/1; border-radius: 50%; text-decoration: none; text-align: center; line-height: 1.1; font-style: italic; font-weight: 700; letter-spacing: 0.02em; color: #111; box-shadow: 0 10px 30px rgba(0,0,0,0.35), inset 0 -4px 8px rgba(0,0,0,0.25); border: 1.5px solid rgba(0,0,0,0.35); transform: translateZ(0); animation: float 10s ease-in-out infinite; font-family: var(--font-display); }
