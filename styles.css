@@ -101,7 +101,7 @@ input, button, select, textarea { font: inherit; }
 .marginalia-grid .m-link:nth-child(5) .nav-icon { width: clamp(150px, 15vw, 320px); height: auto; }
 .m-link .word { position: absolute; inset: 0; display: grid; place-items: center; font-family: var(--font-display); font-size: clamp(12px, 1.8vw, 20px); line-height: 1; letter-spacing: 0.01em; opacity: 0; transform: scale(0.98); transition: transform .25s ease, opacity .25s ease; color: #111; text-align: center; padding: 2px; text-shadow: none; background: none; -webkit-background-clip: initial; }
 .m-link:hover .word, .m-link:focus .word { opacity: 1; transform: scale(1); }
-.m-link:hover .doodle, .m-link:focus .doodle { opacity: 0.75; transform: scale(.96) rotate(0deg); }
+.m-link:hover .doodle, .m-link:focus .doodle { opacity: 0.375; transform: scale(.96) rotate(0deg); }
 .m-link:hover .word, .m-link:focus .word { opacity: 1; transform: scale(1); }
 
 @keyframes breathe { 0%,100% { transform: scale(1); } 50% { transform: scale(1.025); } }
@@ -139,7 +139,7 @@ input, button, select, textarea { font: inherit; }
 /* Landing brand title — place above center drape (About) */
 .ls-brand { position: absolute; top: 22vh; left: 50%; transform: translateX(-50%); z-index: 3; display: grid; place-items: center; text-align: center; pointer-events: none; width: 100%; }
 .ls-title { font-family: var(--font-display); font-weight: 800; letter-spacing: 0.02em; font-style: italic; font-size: clamp(45px, 9.6vw, 128px); color: var(--text); text-shadow: 0 2px 12px rgba(255,255,255,0.6), 0 8px 30px rgba(0,0,0,0.2); line-height: 0.9; }
-.ls-tagline { font-family: 'Ballet', cursive; font-weight: 400; font-size: clamp(17px, 2.6vw, 30px); letter-spacing: 0.01em; color: var(--text); opacity: 0.95; text-align: center; position: static; left: auto; top: auto; transform: none; z-index: auto; padding: 0 .5rem; margin-top: 8px; text-shadow: 0 2px 8px rgba(255,255,255,0.4), 0 6px 16px rgba(0,0,0,0.12); pointer-events: auto; }
+.ls-tagline { font-family: 'Ballet', cursive; font-weight: 700; font-size: clamp(18.7px, 2.86vw, 33px); letter-spacing: 0.01em; color: var(--text); opacity: 0.95; text-align: center; position: static; left: auto; top: auto; transform: none; z-index: auto; padding: 0 .5rem; margin-top: 8px; text-shadow: 0 2px 8px rgba(255,255,255,0.4), 0 6px 16px rgba(0,0,0,0.12); pointer-events: auto; }
 .ls-sub { font-family: var(--font-display); font-weight: 400; letter-spacing: 0.02em; font-size: clamp(14px, 2.6vw, 28px); color: var(--text); opacity: 0.9; text-shadow: 0 2px 10px rgba(255,255,255,0.5), 0 6px 20px rgba(0,0,0,0.18); margin-top: 2px; }
 
 .bubbles { position: relative; z-index: 2; height: 100vh; }
