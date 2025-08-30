@@ -77,12 +77,14 @@ input, button, select, textarea { font: inherit; }
 .illuminated-grid { display: none; }
 
 /* Chaotic marginalia menu */
-.marginalia-grid { position: relative; z-index: 2; min-height: 90vh; display: grid; grid-template-columns: repeat(2, minmax(180px, 1fr)); gap: clamp(18px, 4vw, 38px); align-content: space-between; justify-content: space-between; padding: clamp(80px, 18vh, 220px) clamp(24px, 6vw, 64px); }
-.marginalia-grid .m-link:nth-child(1){ align-self: start; justify-self: start; transform: translate(-2vw, -1vh); }
-.marginalia-grid .m-link:nth-child(2){ align-self: start; justify-self: end;   transform: translate( 2vw, -1vh); }
+.marginalia-grid { position: relative; z-index: 2; min-height: 90vh; display: grid; grid-template-columns: repeat(3, minmax(180px, 1fr)); gap: clamp(18px, 4vw, 38px); align-content: space-between; justify-content: space-between; padding: clamp(80px, 18vh, 220px) clamp(24px, 6vw, 64px); }
+.marginalia-grid .m-link:nth-child(1){ align-self: start; justify-self: start; transform: translate(-2vw, -2vh); }
+.marginalia-grid .m-link:nth-child(2){ align-self: start; justify-self: end;   transform: translate( 2vw, -2vh); }
 /* Move bottom icons up so they aren't clipped */
-.marginalia-grid .m-link:nth-child(3){ align-self: end;   justify-self: start; transform: translate(-2vw, -6vh); }
-.marginalia-grid .m-link:nth-child(4){ align-self: end;   justify-self: end;   transform: translate( 2vw, -6vh); }
+.marginalia-grid .m-link:nth-child(3){ align-self: end;   justify-self: start; transform: translate(-2vw, -8vh); }
+.marginalia-grid .m-link:nth-child(4){ align-self: end;   justify-self: end;   transform: translate( 2vw, -8vh); }
+/* Press (5th) near top center */
+.marginalia-grid .m-link:nth-child(5){ align-self: start; justify-self: center; transform: translate(0, -2vh); }
 .m-link { --bd: var(--dur,6s); --glow: #ff00ee; position: relative; display: grid; place-items: center; width: clamp(180px, 26vw, 280px); aspect-ratio: 1/1; text-decoration: none; color: #111; animation: breathe var(--bd) ease-in-out infinite var(--delay,0s); }
 .m-link .doodle { position: absolute; inset: 0; display: grid; place-items: center; transition: transform .6s ease, opacity .6s ease; /* keep original icon color */ filter: none; }
 .m-link .doodle svg { width: 90%; height: 90%; filter: drop-shadow(0 6px 20px rgba(0,0,0,0.15)); animation: wiggle calc(var(--bd) * 1.1) ease-in-out infinite alternate; }
@@ -90,7 +92,9 @@ input, button, select, textarea { font: inherit; }
 /* Top icon slightly bigger (2nd item visually on top-right) */
 .marginalia-grid .m-link:nth-child(2) .nav-icon { transform: scale(1.12); }
 /* Mirror smaller: assuming the cracked-oval is tearsheet (4th) */
-.marginalia-grid .m-link:nth-child(4) .nav-icon { transform: scale(0.78); }
+.marginalia-grid .m-link:nth-child(4) .nav-icon { transform: scale(0.75); }
+/* Press modest size */
+.marginalia-grid .m-link:nth-child(5) .nav-icon { transform: scale(0.92); }
 .m-link .word { position: absolute; inset: 0; display: grid; place-items: center; font-family: var(--font-display); font-size: clamp(36px, 5.8vw, 72px); line-height: 1; letter-spacing: 0.01em; opacity: 0; transform: scale(0.94); transition: transform .35s ease, opacity .35s ease; color: #111; text-align: center; padding: 8px; text-shadow: none; background: none; -webkit-background-clip: initial; }
 .m-link:hover .word, .m-link:focus .word { opacity: 1; transform: scale(1) rotate(0deg); animation: glowPulse 2.2s ease-in-out infinite; }
 .m-link:hover .doodle, .m-link:focus .doodle { opacity: .35; transform: scale(.94) rotate(-4deg); }

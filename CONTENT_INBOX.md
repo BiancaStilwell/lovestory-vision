@@ -21,21 +21,19 @@ Custom snail cursor (landing page):
 - I’ll use it automatically; otherwise a vector fallback snail is shown.
 
 Landing symbols (replace the doodles):
-- Drop four PNGs at `assets/img/symbols/` with these exact names:
+- Drop PNGs at `assets/img/symbols/` with these exact names:
   - `about.png`
   - `portfolio.png`
   - `contact.png`
   - `tearsheet.png`
+  - `press.png` (new)
 - They will appear automatically on the landing page and fade under the hover word animation.
 
-Alternatively, drop the raw images (even with checkerboard background) into `icons/_INBOX/` and run one of:
+Alternatively, drop the raw images (even with checkerboard background) into `icons/_INBOX/` and run:
 
-- Transparent fills (keeps full image, no outline):
-  `python3 tools/extract_symbols.py`
-- Outline‑only line symbols (your request):
-  `python3 tools/make_outline_symbols.py`
+`python3 tools/extract_symbols5.py`
 
-Both commands write to `icons/about.png`, `icons/portfolio.png`, `icons/contact.png`, `icons/tearsheet.png` and the landing page picks them up automatically.
+This writes `icons/about.png`, `icons/portfolio.png`, `icons/contact.png`, `icons/tearsheet.png`, and `icons/press.png`. The landing page will pick them up automatically.
 
 - Bio & contact: send in plain text or paste into a message.
 
