@@ -80,12 +80,17 @@ input, button, select, textarea { font: inherit; }
 .marginalia-grid { position: relative; z-index: 2; min-height: 90vh; display: grid; grid-template-columns: repeat(2, minmax(180px, 1fr)); gap: clamp(18px, 4vw, 38px); align-content: space-between; justify-content: space-between; padding: clamp(80px, 18vh, 220px) clamp(24px, 6vw, 64px); }
 .marginalia-grid .m-link:nth-child(1){ align-self: start; justify-self: start; transform: translate(-2vw, -1vh); }
 .marginalia-grid .m-link:nth-child(2){ align-self: start; justify-self: end;   transform: translate( 2vw, -1vh); }
-.marginalia-grid .m-link:nth-child(3){ align-self: end;   justify-self: start; transform: translate(-2vw,  1vh); }
+/* Move bottom-left up a bit so it isn't clipped */
+.marginalia-grid .m-link:nth-child(3){ align-self: end;   justify-self: start; transform: translate(-2vw, -2.5vh); }
 .marginalia-grid .m-link:nth-child(4){ align-self: end;   justify-self: end;   transform: translate( 2vw,  1vh); }
 .m-link { --bd: var(--dur,6s); --glow: #ff00ee; position: relative; display: grid; place-items: center; width: clamp(180px, 26vw, 280px); aspect-ratio: 1/1; text-decoration: none; color: #111; animation: breathe var(--bd) ease-in-out infinite var(--delay,0s); }
 .m-link .doodle { position: absolute; inset: 0; display: grid; place-items: center; transition: transform .6s ease, opacity .6s ease; /* keep original icon color */ filter: none; }
 .m-link .doodle svg { width: 90%; height: 90%; filter: drop-shadow(0 6px 20px rgba(0,0,0,0.15)); animation: wiggle calc(var(--bd) * 1.1) ease-in-out infinite alternate; }
-.m-link .symbol-img { width: 90%; height: 90%; object-fit: contain; filter: drop-shadow(0 6px 18px rgba(0,0,0,0.18)); /* preserve original tones */ mix-blend-mode: normal; }
+.m-link .symbol-img, .m-link .nav-icon { width: 90%; height: 90%; object-fit: contain; filter: drop-shadow(0 6px 18px rgba(0,0,0,0.18)); /* preserve original tones */ mix-blend-mode: normal; transform: scale(1); transition: transform .35s ease; }
+/* Top icon slightly bigger (2nd item visually on top-right) */
+.marginalia-grid .m-link:nth-child(2) .nav-icon { transform: scale(1.08); }
+/* Make the mirror symbol smaller (assumed Tear Sheet at bottom-right; adjust if different) */
+.marginalia-grid .m-link:nth-child(4) .nav-icon { transform: scale(0.86); }
 .m-link .word { position: absolute; inset: 0; display: grid; place-items: center; font-family: var(--font-display); font-size: clamp(40px, 6.5vw, 80px); line-height: 1; text-transform: none; letter-spacing: 0.01em; opacity: 0; transform: scale(0.9) rotate(-2deg); transition: transform .5s cubic-bezier(.2,.8,.2,1), opacity .5s ease, filter .4s ease; background: conic-gradient(from 0deg, #ff00ee, #ffdd00, #00ffd5, #b400ff, #ff00ee); -webkit-background-clip: text; background-clip: text; color: transparent; filter: drop-shadow(0 0 12px rgba(255,0,238,.35)) drop-shadow(0 0 24px rgba(255,221,0,.25)); text-align: center; padding: 8px; }
 .m-link:hover .word, .m-link:focus .word { opacity: 1; transform: scale(1) rotate(0deg); animation: glowPulse 2.2s ease-in-out infinite; }
 .m-link:hover .doodle, .m-link:focus .doodle { opacity: .25; transform: scale(.9) rotate(-6deg); }
