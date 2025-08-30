@@ -76,20 +76,29 @@ input, button, select, textarea { font: inherit; }
 /* Illuminated letters grid */
 .illuminated-grid { display: none; }
 
-/* Chaotic marginalia menu */
-.marginalia-grid { position: relative; z-index: 2; display: grid; grid-template-columns: repeat(3, minmax(160px, 1fr)); grid-template-rows: auto auto auto; row-gap: clamp(8px, 2.8vh, 20px); column-gap: clamp(30px, 7vw, 96px); justify-items: center; align-items: start; align-content: start; justify-content: center; padding: calc(var(--brand-h, 140px) + 0px) clamp(20px, 5vw, 48px) 6vh; margin: 0 auto; max-width: 1200px; }
-/* Positions are defined in the layout overrides further below */
-.m-link { --bd: var(--dur,6s); --glow: #ff00ee; position: relative; display: grid; place-items: center; width: clamp(180px, 26vw, 280px); aspect-ratio: 1/1; text-decoration: none; color: #111; animation: breathe var(--bd) ease-in-out infinite var(--delay,0s); }
-.m-link .doodle { position: absolute; inset: 0; display: grid; place-items: center; transition: transform .6s ease, opacity .6s ease; /* keep original icon color */ filter: none; }
+/* Chaotic marginalia menu → switched to freeform absolute positioning to match reference layout */
+.marginalia-grid { position: relative; z-index: 2; min-height: 96vh; margin: 0 auto; max-width: 1400px; padding: 0 2vw; }
+/* place items absolutely */
+.m-link { --bd: var(--dur,6s); --glow: #ff00ee; position: absolute; display: grid; place-items: center; text-decoration: none; color: #111; animation: none; }
+.m-link .doodle { position: relative; display: grid; place-items: center; transition: transform .3s ease, opacity .3s ease; filter: none; }
 .m-link .doodle svg { width: 90%; height: 90%; filter: drop-shadow(0 6px 20px rgba(0,0,0,0.15)); animation: wiggle calc(var(--bd) * 1.1) ease-in-out infinite alternate; }
 .m-link .symbol-img, .m-link .nav-icon { width: 86%; height: 86%; object-fit: contain; filter: drop-shadow(0 6px 18px rgba(0,0,0,0.18)); /* preserve original tones */ mix-blend-mode: normal; transform: scale(1); transition: transform .35s ease; }
-/* About icon matches the Love Story title width */
-.marginalia-grid .m-link:nth-child(1) .nav-icon { width: min(90vw, var(--title-w, 560px)); height: auto; }
-/* Icon fine-tuning */
-.marginalia-grid .m-link:nth-child(2) .nav-icon { transform: translateX(-6vw) scale(0.75); }  /* Portfolio 25% smaller + nudge left */
-.marginalia-grid .m-link:nth-child(3) .nav-icon { transform: scale(0.90); }  /* Contact slightly smaller */
-.marginalia-grid .m-link:nth-child(4) .nav-icon { transform: translateY(-25%) scale(0.96); }  /* Tear Sheet pulled up 25% */
-.marginalia-grid .m-link:nth-child(5) .nav-icon { transform: scale(0.85); }  /* Press slightly smaller */
+/* Individual placements to mimic Bianca's reference (approximate) */
+/* 1) About (center drape) — centered */
+.marginalia-grid .m-link:nth-child(1){ left: 50%; top: 36vh; transform: translateX(-50%); }
+.marginalia-grid .m-link:nth-child(1) .nav-icon { width: clamp(380px, 46vw, 960px); height: auto; }
+/* 2) Portfolio (cracked oval) — upper left */
+.marginalia-grid .m-link:nth-child(2){ left: 12vw; top: 14vh; }
+.marginalia-grid .m-link:nth-child(2) .nav-icon { width: clamp(120px, 14vw, 260px); height: auto; }
+/* 3) Contact (tall drape) — far right, high */
+.marginalia-grid .m-link:nth-child(3){ right: 6vw; top: 8vh; }
+.marginalia-grid .m-link:nth-child(3) .nav-icon { width: clamp(130px, 12vw, 260px); height: auto; }
+/* 4) Tear Sheet (short drape) — lower left */
+.marginalia-grid .m-link:nth-child(4){ left: 11vw; top: 60vh; }
+.marginalia-grid .m-link:nth-child(4) .nav-icon { width: clamp(120px, 13vw, 240px); height: auto; }
+/* 5) Press (long drape) — mid-right, lower than contact */
+.marginalia-grid .m-link:nth-child(5){ left: 72vw; top: 44vh; }
+.marginalia-grid .m-link:nth-child(5) .nav-icon { width: clamp(150px, 15vw, 320px); height: auto; }
 .m-link .word { position: absolute; inset: 0; display: grid; place-items: center; font-family: var(--font-display); font-size: clamp(12px, 1.8vw, 20px); line-height: 1; letter-spacing: 0.01em; opacity: 0; transform: scale(0.98); transition: transform .25s ease, opacity .25s ease; color: #111; text-align: center; padding: 2px; text-shadow: none; background: none; -webkit-background-clip: initial; }
 .m-link:hover .word, .m-link:focus .word { opacity: 1; transform: scale(1); }
 .m-link:hover .doodle, .m-link:focus .doodle { opacity: .35; transform: scale(.94) rotate(-4deg); }
@@ -109,7 +118,13 @@ input, button, select, textarea { font: inherit; }
 @keyframes shimmer { 0% { filter: hue-rotate(0deg) brightness(1); } 100% { filter: hue-rotate(10deg) brightness(1.06); background-position: 0 0, 10% -6%, 0 0; } }
 
 @media (max-width: 720px) {
-  .marginalia-grid { grid-template-columns: 1fr; min-height: 86vh; padding-top: calc(var(--brand-h, 220px) + 0px); }
+  .marginalia-grid { min-height: 96vh; }
+  /* tighten positions on small screens */
+  .marginalia-grid .m-link:nth-child(1){ top: 34vh; }
+  .marginalia-grid .m-link:nth-child(2){ left: 8vw; top: 10vh; }
+  .marginalia-grid .m-link:nth-child(3){ right: 4vw; top: 10vh; }
+  .marginalia-grid .m-link:nth-child(4){ left: 8vw; top: 62vh; }
+  .marginalia-grid .m-link:nth-child(5){ left: 68vw; top: 52vh; }
 }
 
 /* Full-screen exploding word overlay */
@@ -121,8 +136,8 @@ input, button, select, textarea { font: inherit; }
 @keyframes boomIn { 0% { opacity: 0; transform: scale(.6) rotate(-2deg); } 100% { opacity: 1; transform: scale(1.2) rotate(0deg); } }
 @keyframes boomOut { 0% { opacity: 1; transform: scale(1.2); } 100% { opacity: 0; transform: scale(0.85); } }
 
-/* Landing brand title — centered */
-.ls-brand { position: absolute; top: 8vh; left: 50%; transform: translateX(-50%); z-index: 3; display: grid; place-items: center; text-align: center; pointer-events: none; width: 100%; }
+/* Landing brand title — place above center drape (About) */
+.ls-brand { position: absolute; top: 22vh; left: 50%; transform: translateX(-50%); z-index: 3; display: grid; place-items: center; text-align: center; pointer-events: none; width: 100%; }
 .ls-title { font-family: var(--font-display); font-weight: 800; letter-spacing: 0.02em; font-size: clamp(42px, 9vw, 120px); color: var(--text); text-shadow: 0 2px 12px rgba(255,255,255,0.6), 0 8px 30px rgba(0,0,0,0.2); line-height: 0.9; }
 .ls-sub { font-family: var(--font-display); font-weight: 400; letter-spacing: 0.02em; font-size: clamp(14px, 2.6vw, 28px); color: var(--text); opacity: 0.9; text-shadow: 0 2px 10px rgba(255,255,255,0.5), 0 6px 20px rgba(0,0,0,0.18); margin-top: 2px; }
 
