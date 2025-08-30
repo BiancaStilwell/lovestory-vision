@@ -1,0 +1,5 @@
+Snapshot: locked/snapshot-2025-08-29_23-19-18-851f52f.zip
+Created: 2025-08-29_23-19-18
+Commit: 851f52fc8ada0919f8b3ef03c586fa16382a4f9b
+Message: chore: add tools/make_snail_cursor.py (auto-cutout for parchment images) and install Pillow locally if needed
+Note: This snapshot is public if you publish the repo to Pages.
