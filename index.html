@@ -69,7 +69,7 @@
 
     <!-- Footer copyright removed per request -->
 
-      <div class="word-explode" id="word-explode" aria-hidden="true"><div class="text"></div></div>
+      <!-- Explosive overlay removed per request -->
 
     <script type="module">
       // Pixel sword cursor (disabled for marginalia experiment)
@@ -121,29 +121,7 @@
         frame();
       }
 
-      // Exploding word overlay on hover/focus
-      const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-      const overlay = document.getElementById('word-explode');
-      const overlayText = overlay?.querySelector('.text');
-      function showWord(word){
-        if (!overlay || !overlayText || reduce) return;
-        overlay.classList.remove('hide');
-        overlay.classList.add('show');
-        overlayText.textContent = word;
-      }
-      function hideWord(){
-        if (!overlay || !overlayText || reduce) return;
-        overlay.classList.remove('show');
-        overlay.classList.add('hide');
-        setTimeout(()=>{ overlay.classList.remove('hide'); overlay.style.display='none'; overlay.offsetHeight; overlay.style.display=''; }, 450);
-      }
-      document.querySelectorAll('.m-link').forEach((link)=>{
-        const word = link.getAttribute('data-word');
-        link.addEventListener('mouseenter', ()=> showWord(word));
-        link.addEventListener('focus', ()=> showWord(word));
-        link.addEventListener('mouseleave', hideWord);
-        link.addEventListener('blur', hideWord);
-      });
+      // Overlay effect removed — words appear in-place over icons via CSS
 
       // Custom cursor follower (blue glove)
       const cursorEnabled = matchMedia('(pointer:fine)').matches && !reduce;
