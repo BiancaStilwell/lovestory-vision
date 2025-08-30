@@ -81,6 +81,13 @@
       <!-- Explosive overlay removed per request -->
 
     <script type="module">
+      // Measure title width so the About icon can match it
+      const titleEl = document.querySelector('.ls-title');
+      if (titleEl) {
+        const setW = () => document.documentElement.style.setProperty('--title-w', `${Math.round(titleEl.getBoundingClientRect().width)}px`);
+        setW();
+        window.addEventListener('resize', setW);
+      }
       // Pixel sword cursor (disabled for marginalia experiment)
       const swordsEnabled = false;
       const splash = document.querySelector('.splash');
