@@ -11,7 +11,7 @@
   --font-display: 'Cinzel', Georgia, serif;
   --font-script: 'Cherish', 'Brush Script MT', cursive;
   --video-pos-y: 50%; /* center for new video */
-  --heading-color: var(--text); /* customizable heading color */
+  --heading-color: #711113; /* ruby */
 }
 
 * { box-sizing: border-box; }
