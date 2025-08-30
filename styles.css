@@ -139,6 +139,7 @@ input, button, select, textarea { font: inherit; }
 /* Landing brand title — place above center drape (About) */
 .ls-brand { position: absolute; top: 22vh; left: 50%; transform: translateX(-50%); z-index: 3; display: grid; place-items: center; text-align: center; pointer-events: none; width: 100%; }
 .ls-title { font-family: var(--font-display); font-weight: 800; letter-spacing: 0.02em; font-style: italic; font-size: clamp(45px, 9.6vw, 128px); color: var(--text); text-shadow: 0 2px 12px rgba(255,255,255,0.6), 0 8px 30px rgba(0,0,0,0.2); line-height: 0.9; }
+.ls-tagline { font-family: 'Ballet', cursive; font-weight: 400; font-size: clamp(17px, 2.6vw, 30px); letter-spacing: 0.01em; color: var(--text); opacity: 0.95; text-align: center; position: fixed; top: 2vh; left: 50%; transform: translateX(-50%); z-index: 5; padding: 0 .5rem; text-shadow: 0 2px 8px rgba(255,255,255,0.4), 0 6px 16px rgba(0,0,0,0.12); pointer-events: none; }
 .ls-sub { font-family: var(--font-display); font-weight: 400; letter-spacing: 0.02em; font-size: clamp(14px, 2.6vw, 28px); color: var(--text); opacity: 0.9; text-shadow: 0 2px 10px rgba(255,255,255,0.5), 0 6px 20px rgba(0,0,0,0.18); margin-top: 2px; }
 
 .bubbles { position: relative; z-index: 2; height: 100vh; }
