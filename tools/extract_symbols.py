@@ -73,16 +73,34 @@ def main():
     if not imgs:
         print('Place 4 images into icons/_INBOX and rerun.')
         return
+    # Try to map by filename keywords first
+    def pick(name: str) -> Path | None:
+        name_l = name.lower()
+        for p in imgs:
+            s = p.name.lower()
+            if name_l in s:
+                return p
+        return None
+
+    ordered: List[Path] = []
+    for key in ("about", "portfolio", "contact", "tearsheet"):
+        p = pick(key)
+        if p:
+            ordered.append(p)
+    # Fill with remaining files (deduped)
+    for p in imgs:
+        if p not in ordered:
+            ordered.append(p)
+
     for i, out_name in enumerate(OUT_FILES):
-        if i >= len(imgs):
+        if i >= len(ordered):
             break
-        img = Image.open(imgs[i])
+        img = Image.open(ordered[i])
         img = clean_background(img)
         img = resize_max(img, 512)
         out_path = OUT / out_name
         img.save(out_path, 'PNG')
-        print(f'Saved {out_path} from {imgs[i].name}')
+        print(f'Saved {out_path} from {ordered[i].name}')
 
 if __name__ == '__main__':
     main()
-
