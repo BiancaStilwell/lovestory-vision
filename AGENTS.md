@@ -8,6 +8,7 @@
 * **Agent does the work**: assume Bianca does not know Git, GitHub, or servers. The agent runs all commands (init, commits, pushes, starting/stopping local preview) and reports results in plain English.
 * **Minimal questions**: implement what she asks; if underspecified, either choose the simplest sensible default or ask one brief clarifier (especially for style).
 * **Bianca overrides**: her explicit instructions trump this file; only push back if something is technically unsound—explain briefly and propose a simpler alternative.
+* **Local Server**: Always take the most straightforward approach when asked for a live preview, just a simple port for localhost:5173 using "python3 serve.py 5173". Then display the IP address in chat so I can access the site from my phone on the same wifi.
 
 ---
 
@@ -42,8 +43,7 @@ Use this section to record Bianca‑approved choices that must stay exactly as�
 - How to use: when Bianca says “add this to the locked list,” append a new bullet with the date and a short note. Only Bianca can approve removals/edits here.
 
 Current locked items:
-- 2025‑08‑29 — Font: “Amarante” applied to landing page bubbles, heart badge, and all `.cta` buttons.
-- 2025‑08‑29 — Landing layout: full‑bleed splash with circular floating buttons (About, Portfolio, Contact, Download Tearsheet) and a central dark heart CTA.
+
 
 ---
 

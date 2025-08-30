@@ -8,7 +8,6 @@ Replace these placeholders when ready. Keys match inline HTML comments.
 - hero.image — Add `assets/img/hero.jpg` for landing background (optional)
 - meta.title — Browser title (index.html)
 - meta.description — Meta description (index.html)
-- footer.name — Footer credit name (index + pages)
 - about.bio — About paragraph (pages/about.html)
 - portfolio.mirrors.caption.1 — Sample caption (pages/portfolio.html)
 - portfolio.lighting.caption.1 — Sample caption (pages/portfolio.html)
@@ -18,5 +17,8 @@ Replace these placeholders when ready. Keys match inline HTML comments.
 - contact.phone — Optional phone number (pages/contact.html)
 
 Assets pending:
-- assets/docs/tearsheet.pdf — Provide final tear sheet PDF (linked in header + hero)
+- assets/docs/tearsheet.pdf — Provide final tear sheet PDF (unlocked via Contact → Tear Sheet)
 - assets/img/_INBOX/* — Add portfolio images; I will optimize and place
+
+New placeholders:
+- tearsheet.password — Password string for soft gate (pages/contact.html script)

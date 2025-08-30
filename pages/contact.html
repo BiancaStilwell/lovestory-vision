@@ -21,7 +21,7 @@
             <li><a href="portfolio.html">Portfolio</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="contact.html" aria-current="page">Contact</a></li>
-            <li><a href="../assets/docs/tearsheet.pdf" download>Download Tearsheet</a></li>
+            <li><a href="#tearsheet">Tearsheet</a></li>
           </ul>
         </nav>
       </div>
@@ -31,16 +31,47 @@
       <h1>Contact</h1>
       <p><!-- TODO:COPY contact.intro -->For commissions, collaborations, and press, email me directly. Studio visits by appointment.</p>
       <p>
-        <a class="cta" href="mailto:<!-- TODO:COPY contact.email -->your@email">
-          Email Me
-        </a>
+        <a href="mailto:<!-- TODO:COPY contact.email -->your@email">Email Me</a>
       </p>
       <p class="muted">Prefer a phone call? <!-- TODO:COPY contact.phone -->Add a phone number here (optional).</p>
+      <section id="tearsheet" aria-labelledby="tearsheet-title" style="margin-top: 40px;">
+        <h2 id="tearsheet-title">Download Tear Sheet</h2>
+        <p>Enter the password to unlock the download.</p>
+        <form id="ts-form" onsubmit="return false" style="display: grid; grid-template-columns: 1fr auto; gap: 10px; max-width: 420px;">
+          <label for="ts-pass" class="visually-hidden">Password</label>
+          <input type="password" id="ts-pass" name="ts-pass" placeholder="Password" autocomplete="off" required style="padding: 10px; border: 1px solid rgba(0,0,0,0.2); border-radius: 6px;">
+          <button id="ts-btn" type="button" style="padding: 10px 14px; border-radius: 6px; border: 1px solid rgba(0,0,0,0.2); background: #f7f7f7; cursor: pointer;">Unlock</button>
+          <p id="ts-msg" class="muted" role="status" aria-live="polite" style="grid-column: 1 / -1; margin: 0;"></p>
+          <p id="ts-link-wrap" hidden style="grid-column: 1 / -1; margin: 0;">
+            <a id="ts-link" href="../assets/docs/tearsheet.pdf" download>Download tear sheet (PDF)</a>
+          </p>
+        </form>
+        <!-- NOTE: This is a soft, client-side check only. For true protection, we need a backend or encryption. -->
+        <!-- TODO:COPY tearsheet.password -->
+      </section>
     </main>
 
-    <footer class="site-footer">
-      <div class="wrap"><small>© <span id="year"></span> Bianca.</small></div>
-    </footer>
-    <script type="module">document.getElementById('year').textContent = new Date().getFullYear();</script>
+    <!-- Footer removed per request -->
+    <script type="module">
+      // Temporary password for soft gate. Change anytime.
+      const TEARSHEET_PASSWORD = 'mirror'; // TODO:COPY tearsheet.password
+      const btn = document.getElementById('ts-btn');
+      const input = document.getElementById('ts-pass');
+      const msg = document.getElementById('ts-msg');
+      const wrap = document.getElementById('ts-link-wrap');
+      btn?.addEventListener('click', () => {
+        const ok = input.value.trim() === TEARSHEET_PASSWORD;
+        if (ok) {
+          wrap.hidden = false;
+          msg.textContent = 'Unlocked.';
+          input.setAttribute('aria-invalid', 'false');
+        } else {
+          wrap.hidden = true;
+          msg.textContent = 'Incorrect password. Try again.';
+          input.setAttribute('aria-invalid', 'true');
+        }
+      });
+      input?.addEventListener('keydown', (e) => { if (e.key === 'Enter') btn.click(); });
+    </script>
   </body>
   </html>

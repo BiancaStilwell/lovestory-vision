@@ -18,14 +18,7 @@
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
 
-    <header class="site-header splash-header" role="banner">
-      <div class="wrap">
-        <a class="brand" href="/">
-          <span class="brand-mark" aria-hidden="true">◐</span>
-          <span class="brand-name"><!-- TODO:COPY hero.name -->Bianca</span>
-        </a>
-      </div>
-    </header>
+    <!-- Removed brand header per request -->
 
     <main id="main" class="splash" tabindex="-1" aria-label="Landing">
       <div class="bg" aria-hidden="true"></div>
@@ -36,7 +29,7 @@
         <a class="bubble lime pos-tl" href="pages/about.html"><span>About</span></a>
         <a class="bubble blue pos-tr" href="pages/portfolio.html"><span>Portfolio</span></a>
         <a class="bubble blue pos-bl" href="pages/contact.html"><span>Contact</span></a>
-        <a class="bubble lime pos-br" href="assets/docs/tearsheet.pdf" download><span>Download<br>Tearsheet</span></a>
+        <a class="bubble lime pos-br" href="pages/contact.html#tearsheet"><span>Download<br>Tearsheet</span></a>
       </nav>
 
       <a class="heart-cta" href="pages/portfolio.html" aria-label="Enter portfolio">
@@ -45,15 +38,10 @@
       </a>
     </main>
 
-    <footer class="site-footer">
-      <div class="wrap">
-        <small>© <span id="year"></span> <!-- TODO:COPY footer.name -->Bianca. All rights reserved.</small>
-      </div>
-    </footer>
+    <!-- Footer copyright removed per request -->
 
     <script type="module">
-      // Set current year
-      document.getElementById('year').textContent = new Date().getFullYear();
+      // no-op
     </script>
   </body>
 </html>
