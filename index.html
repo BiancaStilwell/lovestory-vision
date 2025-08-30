@@ -81,13 +81,21 @@
       <!-- Explosive overlay removed per request -->
 
     <script type="module">
-      // Measure title width so the About icon can match it
+      // Measure title width and brand height to size/position About icon and grid
       const titleEl = document.querySelector('.ls-title');
-      if (titleEl) {
-        const setW = () => document.documentElement.style.setProperty('--title-w', `${Math.round(titleEl.getBoundingClientRect().width)}px`);
-        setW();
-        window.addEventListener('resize', setW);
-      }
+      const brandEl = document.querySelector('.ls-brand');
+      const setDims = () => {
+        if (titleEl) {
+          const tw = Math.round(titleEl.getBoundingClientRect().width);
+          document.documentElement.style.setProperty('--title-w', `${tw}px`);
+        }
+        if (brandEl) {
+          const bh = Math.round(brandEl.getBoundingClientRect().height);
+          document.documentElement.style.setProperty('--brand-h', `${bh}px`);
+        }
+      };
+      setDims();
+      window.addEventListener('resize', setDims);
       // Pixel sword cursor (disabled for marginalia experiment)
       const swordsEnabled = false;
       const splash = document.querySelector('.splash');

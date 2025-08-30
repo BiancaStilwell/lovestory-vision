@@ -49,3 +49,7 @@
 [I 250830 10:22:18 handlers:135] Browser Connected: http://localhost:5175/
 [I 250830 10:22:58 handlers:92] Reload 1 waiters: styles.css
 [I 250830 10:23:47 handlers:92] Reload 1 waiters: styles.css
+[I 250830 10:25:18 handlers:135] Browser Connected: http://localhost:5175/
+[I 250830 10:32:02 handlers:92] Reload 1 waiters: styles.css
+[I 250830 10:32:42 handlers:92] Reload 1 waiters: index.html
+[I 250830 10:32:42 handlers:135] Browser Connected: http://localhost:5175/
