@@ -77,18 +77,18 @@ input, button, select, textarea { font: inherit; }
 .illuminated-grid { display: none; }
 
 /* Chaotic marginalia menu */
-.marginalia-grid { position: relative; z-index: 2; display: grid; grid-template-columns: repeat(3, minmax(160px, 1fr)); grid-template-rows: auto auto auto; row-gap: clamp(8px, 2.8vh, 20px); column-gap: clamp(30px, 7vw, 96px); justify-items: center; align-items: start; align-content: start; justify-content: center; padding: calc(var(--brand-h, 140px) + 8px) clamp(20px, 5vw, 48px) 6vh; margin: 0 auto; max-width: 1200px; }
+.marginalia-grid { position: relative; z-index: 2; display: grid; grid-template-columns: repeat(3, minmax(160px, 1fr)); grid-template-rows: auto auto auto; row-gap: clamp(8px, 2.8vh, 20px); column-gap: clamp(30px, 7vw, 96px); justify-items: center; align-items: start; align-content: start; justify-content: center; padding: calc(var(--brand-h, 140px) + 0px) clamp(20px, 5vw, 48px) 6vh; margin: 0 auto; max-width: 1200px; }
 /* Positions are defined in the layout overrides further below */
 .m-link { --bd: var(--dur,6s); --glow: #ff00ee; position: relative; display: grid; place-items: center; width: clamp(180px, 26vw, 280px); aspect-ratio: 1/1; text-decoration: none; color: #111; animation: breathe var(--bd) ease-in-out infinite var(--delay,0s); }
 .m-link .doodle { position: absolute; inset: 0; display: grid; place-items: center; transition: transform .6s ease, opacity .6s ease; /* keep original icon color */ filter: none; }
 .m-link .doodle svg { width: 90%; height: 90%; filter: drop-shadow(0 6px 20px rgba(0,0,0,0.15)); animation: wiggle calc(var(--bd) * 1.1) ease-in-out infinite alternate; }
 .m-link .symbol-img, .m-link .nav-icon { width: 86%; height: 86%; object-fit: contain; filter: drop-shadow(0 6px 18px rgba(0,0,0,0.18)); /* preserve original tones */ mix-blend-mode: normal; transform: scale(1); transition: transform .35s ease; }
-/* About icon matches (approximately) the Love Story title width */
-.marginalia-grid .m-link:nth-child(1) .nav-icon { width: min(78vw, var(--title-w, 560px)); height: auto; }
+/* About icon matches the Love Story title width */
+.marginalia-grid .m-link:nth-child(1) .nav-icon { width: min(90vw, var(--title-w, 560px)); height: auto; }
 /* Icon fine-tuning */
-.marginalia-grid .m-link:nth-child(2) .nav-icon { transform: scale(1.12); }  /* Portfolio a touch larger */
+.marginalia-grid .m-link:nth-child(2) .nav-icon { transform: translateX(-5vw) scale(0.84); }  /* Portfolio 25% smaller + nudge left */
 .marginalia-grid .m-link:nth-child(3) .nav-icon { transform: scale(0.90); }  /* Contact slightly smaller */
-.marginalia-grid .m-link:nth-child(4) .nav-icon { transform: scale(0.96); }  /* Tear Sheet slightly bigger */
+.marginalia-grid .m-link:nth-child(4) .nav-icon { transform: translateY(-25%) scale(0.96); }  /* Tear Sheet pulled up 25% */
 .marginalia-grid .m-link:nth-child(5) .nav-icon { transform: scale(0.85); }  /* Press slightly smaller */
 .m-link .word { position: absolute; inset: 0; display: grid; place-items: center; font-family: var(--font-display); font-size: clamp(12px, 1.8vw, 20px); line-height: 1; letter-spacing: 0.01em; opacity: 0; transform: scale(0.98); transition: transform .25s ease, opacity .25s ease; color: #111; text-align: center; padding: 2px; text-shadow: none; background: none; -webkit-background-clip: initial; }
 .m-link:hover .word, .m-link:focus .word { opacity: 1; transform: scale(1); }
@@ -109,7 +109,7 @@ input, button, select, textarea { font: inherit; }
 @keyframes shimmer { 0% { filter: hue-rotate(0deg) brightness(1); } 100% { filter: hue-rotate(10deg) brightness(1.06); background-position: 0 0, 10% -6%, 0 0; } }
 
 @media (max-width: 720px) {
-  .marginalia-grid { grid-template-columns: 1fr; min-height: 86vh; padding-top: calc(var(--brand-h, 220px) + 8px); }
+  .marginalia-grid { grid-template-columns: 1fr; min-height: 86vh; padding-top: calc(var(--brand-h, 220px) + 0px); }
 }
 
 /* Full-screen exploding word overlay */
@@ -163,8 +163,8 @@ input, button, select, textarea { font: inherit; }
 /* About centered under title (exactly below Love Story) */
 .marginalia-grid .m-link:nth-child(1){ grid-column: 2; grid-row: 1; align-self: start; justify-self: center; margin-top: 0; }
 /* Top row left/right */
-.marginalia-grid .m-link:nth-child(2){ grid-column: 1; grid-row: 1; align-self: start; justify-self: end;   margin-top: -4vh; }
-.marginalia-grid .m-link:nth-child(3){ grid-column: 3; grid-row: 1; align-self: start; justify-self: start; margin-top: -4vh; }
+.marginalia-grid .m-link:nth-child(2){ grid-column: 1; grid-row: 2; align-self: start; justify-self: end;   margin-top: -2vh; }
+.marginalia-grid .m-link:nth-child(3){ grid-column: 3; grid-row: 2; align-self: start; justify-self: start; margin-top: -2vh; }
 /* Bottom row raised within viewport */
 .marginalia-grid .m-link:nth-child(4){ grid-column: 1; grid-row: 3; align-self: start; justify-self: start; margin-top: -14vh; }
 .marginalia-grid .m-link:nth-child(5){ grid-column: 3; grid-row: 3; align-self: start; justify-self: end;   margin-top: -14vh; }
