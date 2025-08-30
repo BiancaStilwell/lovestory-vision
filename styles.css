@@ -8,9 +8,9 @@
   --radius: 8px;
   --neon-lime: #d7ff3f;
   --electric-blue: #1e21ff;
-  --font-display: 'Amarante', Georgia, serif;
+  --font-display: 'Cinzel', Georgia, serif;
   --font-script: 'Cherish', 'Brush Script MT', cursive;
-  --video-pos-y: 28%; /* shift to crop bottom area (person) */
+  --video-pos-y: 50%; /* center for new video */
 }
 
 * { box-sizing: border-box; }
