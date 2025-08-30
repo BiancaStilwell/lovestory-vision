@@ -37,7 +37,7 @@
           <label for="ts-pass" class="visually-hidden">Password</label>
           <input type="password" id="ts-pass" name="ts-pass" placeholder="Password" autocomplete="off" required style="padding: 10px; border: 1px solid rgba(0,0,0,0.2); border-radius: 6px;">
           <button id="ts-btn" type="button" class="icon-btn" aria-label="Unlock">
-            <img src="../assets/icons/unlock.png" alt="" style="display:block; width: 44px; height: auto;">
+            <img src="../icons/unlock.png" alt="" style="display:block; width: 44px; height: auto;">
           </button>
           <p id="ts-msg" class="muted" role="status" aria-live="polite" style="grid-column: 1 / -1; margin: 0;"></p>
           <p id="ts-link-wrap" hidden style="grid-column: 1 / -1; margin: 0;">
@@ -61,7 +61,7 @@
       });
 
       // Soft password gate
-      const TEARSHEET_PASSWORD = 'Romance'; // TODO:COPY tearsheet.password
+      const TEARSHEET_PASSWORD = 'romance'; // TODO:COPY tearsheet.password
       const btn = document.getElementById('ts-btn');
       const input = document.getElementById('ts-pass');
       const msg = document.getElementById('ts-msg');
