@@ -29,25 +29,21 @@
 
       <h1 class="visually-hidden"><!-- TODO:COPY hero.tagline -->medieval methods of modern self‑reflection</h1>
 
-      <nav class="bubbles" aria-label="Primary">
-        <a class="bubble lime pos-tl" href="pages/about.html"><span>About</span></a>
-        <a class="bubble blue pos-tr" href="pages/portfolio.html"><span>Portfolio</span></a>
-        <a class="bubble blue pos-bl" href="pages/contact.html"><span>Contact</span></a>
-        <a class="bubble lime pos-br" href="pages/contact.html#tearsheet"><span>Download<br>Tearsheet</span></a>
+      <nav class="illuminated-grid" aria-label="Primary">
+        <a class="illum-link" href="pages/about.html" data-letter="A"><span aria-hidden="true" class="knot"></span><span class="visually-hidden">About</span></a>
+        <a class="illum-link" href="pages/portfolio.html" data-letter="P"><span aria-hidden="true" class="knot"></span><span class="visually-hidden">Portfolio</span></a>
+        <a class="illum-link" href="pages/contact.html" data-letter="C"><span aria-hidden="true" class="knot"></span><span class="visually-hidden">Contact</span></a>
+        <a class="illum-link" href="pages/contact.html#tearsheet" data-letter="T"><span aria-hidden="true" class="knot"></span><span class="visually-hidden">Tear Sheet</span></a>
       </nav>
-
-      <a class="heart-cta" href="pages/portfolio.html" aria-label="Enter portfolio">
-        <span class="heart-shape" aria-hidden="true"></span>
-        <span class="heart-text"><!-- TODO:COPY hero.badge -->Enter Portfolio</span>
-      </a>
     </main>
 
     <!-- Footer copyright removed per request -->
 
     <script type="module">
-      // Pixel sword cursor on landing page
+      // Pixel sword cursor (disabled for illuminated experiment)
+      const swordsEnabled = false;
       const splash = document.querySelector('.splash');
-      if (splash && matchMedia('(pointer:fine)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      if (swordsEnabled && splash && matchMedia('(pointer:fine)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
         const sword = document.createElement('div');
         sword.className = 'sword-cursor';
         sword.setAttribute('aria-hidden', 'true');
