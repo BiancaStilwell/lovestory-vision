@@ -28,6 +28,9 @@ body {
 }
 /* Inner pages background (exclude landing) */
 body.inner { background-color: #929CAE; }
+
+/* Tear sheet layout wrap */
+.ts-wrap { max-width: 420px; margin: 0 auto; text-align: center; }
 /* Ensure form controls inherit font */
 input, button, select, textarea { font: inherit; }
 
