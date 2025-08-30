@@ -61,7 +61,11 @@ input, button, select, textarea { font: inherit; }
 .splash { position: relative; min-height: 80vh; overflow: hidden; background: var(--bg); }
 .splash .bg {
   position: absolute; inset: 0; z-index: 0;
-  background: url('assets/img/hero.jpg') center/cover no-repeat;
+  background:
+    url('assets/img/hero.webp') center/cover no-repeat,
+    url('assets/img/hero.jpg') center/cover no-repeat,
+    url('assets/img/hero.png') center/cover no-repeat;
+  background-color: var(--bg);
 }
 
 /* Landing brand title */
