@@ -33,10 +33,12 @@
       <section aria-labelledby="tearsheet-title" style="text-align:center;">
         <h1 id="tearsheet-title">Download Tear Sheet</h1>
         <p>Enter the password to unlock the download.</p>
-        <form id="ts-form" onsubmit="return false" style="display: grid; grid-template-columns: 1fr auto; gap: 10px; max-width: 420px; margin: 0 auto;">
+        <form id="ts-form" onsubmit="return false" style="display: grid; grid-template-columns: 1fr auto; gap: 10px; max-width: 420px; margin: 0 auto; align-items: center;">
           <label for="ts-pass" class="visually-hidden">Password</label>
           <input type="password" id="ts-pass" name="ts-pass" placeholder="Password" autocomplete="off" required style="padding: 10px; border: 1px solid rgba(0,0,0,0.2); border-radius: 6px;">
-          <button id="ts-btn" type="button" style="padding: 10px 14px; border-radius: 6px; border: 1px solid rgba(0,0,0,0.2); background: #f7f7f7; cursor: pointer;">Unlock</button>
+          <button id="ts-btn" type="button" class="icon-btn" aria-label="Unlock">
+            <img src="../assets/icons/unlock.png" alt="" style="display:block; width: 44px; height: auto;">
+          </button>
           <p id="ts-msg" class="muted" role="status" aria-live="polite" style="grid-column: 1 / -1; margin: 0;"></p>
           <p id="ts-link-wrap" hidden style="grid-column: 1 / -1; margin: 0;">
             <a id="ts-link" href="../assets/docs/tearsheet.pdf" download>Download tear sheet (PDF)</a>
