@@ -30,7 +30,9 @@ body {
 body.inner { background-color: #929CAE; }
 
 /* Tear sheet layout wrap */
-.ts-wrap { max-width: 420px; margin: 0 auto; text-align: center; }
+.ts-wrap { max-width: 420px; margin: 0 auto; }
+.ts-head { width: calc(100% - var(--icon-w, 76px) - 10px); margin: 0 auto 10px; text-align: center; }
+.ts-head h1 { white-space: nowrap; margin: 0 0 6px; }
 .ts-wrap h1 { white-space: nowrap; }
 /* Ensure form controls inherit font */
 input, button, select, textarea { font: inherit; }

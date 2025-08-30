@@ -31,9 +31,11 @@
 
     <main id="main" class="page" style="display:grid; place-items:center; min-height: 72vh; position: relative;">
       <section aria-labelledby="tearsheet-title">
-        <div class="ts-wrap">
-          <h1 id="tearsheet-title">Download Tear Sheet</h1>
-          <p>Enter the password to unlock the download.</p>
+        <div class="ts-wrap" style="--icon-w: 76px;">
+          <div class="ts-head">
+            <h1 id="tearsheet-title">Download Tear Sheet</h1>
+            <p>Enter the password to unlock the download.</p>
+          </div>
           <form id="ts-form" onsubmit="return false" style="display: grid; grid-template-columns: 1fr auto; gap: 10px; align-items: center;">
           <label for="ts-pass" class="visually-hidden">Password</label>
           <input type="password" id="ts-pass" name="ts-pass" placeholder="Password" autocomplete="off" required style="padding: 10px; border: 1px solid rgba(0,0,0,0.2); border-radius: 6px;">
