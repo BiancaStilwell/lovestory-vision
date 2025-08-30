@@ -15,9 +15,10 @@
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header" role="banner">
       <div class="wrap">
-        <a class="brand" href="../"><span class="brand-mark" aria-hidden="true">◐</span><span class="brand-name">Bianca</span></a>
-        <nav aria-label="Main" class="main-nav">
+        <button class="menu-toggle" aria-expanded="false" aria-controls="site-menu" aria-label="Menu">☰</button>
+        <nav aria-label="Main" class="main-nav" id="site-menu" hidden>
           <ul>
+            <li><a href="../">Home</a></li>
             <li><a href="portfolio.html">Portfolio</a></li>
             <li><a href="about.html" aria-current="page">About</a></li>
             <li><a href="contact.html">Contact</a></li>
@@ -33,6 +34,15 @@
     </main>
 
     <!-- Footer removed per request -->
-    <script type="module"></script>
+    <a class="home-fab" href="../">Home</a>
+    <script type="module">
+      const btn = document.querySelector('.menu-toggle');
+      const menu = document.getElementById('site-menu');
+      btn?.addEventListener('click', () => {
+        const open = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!open));
+        if (open) menu.setAttribute('hidden', ''); else menu.removeAttribute('hidden');
+      });
+    </script>
   </body>
   </html>

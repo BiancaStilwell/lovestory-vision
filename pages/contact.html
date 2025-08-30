@@ -15,9 +15,10 @@
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header" role="banner">
       <div class="wrap">
-        <a class="brand" href="../"><span class="brand-mark" aria-hidden="true">◐</span><span class="brand-name">Bianca</span></a>
-        <nav aria-label="Main" class="main-nav">
+        <button class="menu-toggle" aria-expanded="false" aria-controls="site-menu" aria-label="Menu">☰</button>
+        <nav aria-label="Main" class="main-nav" id="site-menu" hidden>
           <ul>
+            <li><a href="../">Home</a></li>
             <li><a href="portfolio.html">Portfolio</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="contact.html" aria-current="page">Contact</a></li>
@@ -29,7 +30,7 @@
 
     <main id="main" class="page wrap">
       <h1>Contact</h1>
-      <p><!-- TODO:COPY contact.intro -->For commissions, collaborations, and press, email me directly. Studio visits by appointment.</p>
+      <p><!-- TODO:COPY contact.intro -->For commissions, collaborations, and press, email <a href="mailto:<!-- TODO:COPY contact.email -->your@email">love story</a> directly. Studio visits and site visits by appointment.</p>
       <p>
         <a href="mailto:<!-- TODO:COPY contact.email -->your@email">Email Me</a>
       </p>
@@ -52,7 +53,17 @@
     </main>
 
     <!-- Footer removed per request -->
+    <a class="home-fab" href="../">Home</a>
     <script type="module">
+      // Menu toggle
+      const mbtn = document.querySelector('.menu-toggle');
+      const menu = document.getElementById('site-menu');
+      mbtn?.addEventListener('click', () => {
+        const open = mbtn.getAttribute('aria-expanded') === 'true';
+        mbtn.setAttribute('aria-expanded', String(!open));
+        if (open) menu.setAttribute('hidden', ''); else menu.removeAttribute('hidden');
+      });
+      
       // Temporary password for soft gate. Change anytime.
       const TEARSHEET_PASSWORD = 'mirror'; // TODO:COPY tearsheet.password
       const btn = document.getElementById('ts-btn');
