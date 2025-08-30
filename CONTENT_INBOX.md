@@ -28,9 +28,14 @@ Landing symbols (replace the doodles):
   - `tearsheet.png`
 - They will appear automatically on the landing page and fade under the hover word animation.
 
-Alternatively, drop the raw images (even with checkerboard background) into `icons/_INBOX/` and run:
-`python3 tools/extract_symbols.py`
-This will produce cleaned, transparent icons in `icons/about.png`, `icons/portfolio.png`, `icons/contact.png`, `icons/tearsheet.png` and the page will pick them up automatically via `<picture>` fallbacks.
+Alternatively, drop the raw images (even with checkerboard background) into `icons/_INBOX/` and run one of:
+
+- Transparent fills (keeps full image, no outline):
+  `python3 tools/extract_symbols.py`
+- Outline‑only line symbols (your request):
+  `python3 tools/make_outline_symbols.py`
+
+Both commands write to `icons/about.png`, `icons/portfolio.png`, `icons/contact.png`, `icons/tearsheet.png` and the landing page picks them up automatically.
 
 - Bio & contact: send in plain text or paste into a message.
 
