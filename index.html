@@ -29,18 +29,76 @@
 
       <h1 class="visually-hidden"><!-- TODO:COPY hero.tagline -->medieval methods of modern self‑reflection</h1>
 
-      <nav class="illuminated-grid" aria-label="Primary">
-        <a class="illum-link" href="pages/about.html" data-letter="A"><span aria-hidden="true" class="knot"></span><span class="visually-hidden">About</span></a>
-        <a class="illum-link" href="pages/portfolio.html" data-letter="P"><span aria-hidden="true" class="knot"></span><span class="visually-hidden">Portfolio</span></a>
-        <a class="illum-link" href="pages/contact.html" data-letter="C"><span aria-hidden="true" class="knot"></span><span class="visually-hidden">Contact</span></a>
-        <a class="illum-link" href="pages/contact.html#tearsheet" data-letter="T"><span aria-hidden="true" class="knot"></span><span class="visually-hidden">Tear Sheet</span></a>
+      <!-- Chaotic marginalia: doodles morph to glowing letters on hover -->
+      <nav class="marginalia-grid" aria-label="Primary">
+        <a class="m-link" href="pages/about.html" style="--dur:7s;--delay:-1s;" data-letter="A">
+          <span class="doodle" aria-hidden="true">
+            <!-- Snails fighting (stylized) -->
+            <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img">
+              <g fill="#1b1b1b">
+                <path d="M28 78c-9 0-16-7-16-16s7-16 16-16 16 7 16 16c0 2-.3 4-1 6l-7-2c1-2 2-3 2-4 0-4-3-7-7-7s-7 3-7 7 3 7 7 7h13l4 9H28z"/>
+                <path d="M92 78c9 0 16-7 16-16s-7-16-16-16-16 7-16 16c0 2 .3 4 1 6l7-2c-1-2-2-3-2-4 0-4 3-7 7-7s7 3 7 7-3 7-7 7H66l-4 9h30z"/>
+                <circle cx="30" cy="60" r="2" fill="#333"/>
+                <circle cx="90" cy="60" r="2" fill="#333"/>
+                <path d="M42 42c4-4 10-7 18-7s14 3 18 7l-6 6c-3-3-7-4-12-4s-9 1-12 4z"/>
+              </g>
+            </svg>
+          </span>
+          <span class="letter" aria-hidden="true">A</span>
+          <span class="visually-hidden">About</span>
+        </a>
+
+        <a class="m-link" href="pages/portfolio.html" style="--dur:6.6s;--delay:-2s;" data-letter="P">
+          <span class="doodle" aria-hidden="true">
+            <!-- Hybrid beast -->
+            <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img">
+              <g fill="#1b1b1b">
+                <path d="M30 82c0-14 10-26 30-26s30 12 30 26H30z"/>
+                <path d="M54 42l10-12 10 12-10 4z"/>
+                <path d="M80 54l10-6 4 10-8 2zM40 54l-10-6-4 10 8 2z"/>
+              </g>
+            </svg>
+          </span>
+          <span class="letter" aria-hidden="true">P</span>
+          <span class="visually-hidden">Portfolio</span>
+        </a>
+
+        <a class="m-link" href="pages/contact.html" style="--dur:7.4s;--delay:-3s;" data-letter="C">
+          <span class="doodle" aria-hidden="true">
+            <!-- Monk with oversized head -->
+            <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img">
+              <g fill="#1b1b1b">
+                <circle cx="60" cy="46" r="22"/>
+                <rect x="42" y="64" width="36" height="26" rx="8"/>
+                <rect x="52" y="74" width="16" height="16" rx="4"/>
+              </g>
+            </svg>
+          </span>
+          <span class="letter" aria-hidden="true">C</span>
+          <span class="visually-hidden">Contact</span>
+        </a>
+
+        <a class="m-link" href="pages/contact.html#tearsheet" style="--dur:6.8s;--delay:-1.6s;" data-letter="T">
+          <span class="doodle" aria-hidden="true">
+            <!-- Chimera / gryphon -->
+            <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img">
+              <g fill="#1b1b1b">
+                <path d="M32 82c4-10 14-18 28-18s24 8 28 18H32z"/>
+                <path d="M74 48l18-8-4 14zM46 50l-18-8 4 14z"/>
+                <path d="M56 40l8-10 8 10-8 3z"/>
+              </g>
+            </svg>
+          </span>
+          <span class="letter" aria-hidden="true">T</span>
+          <span class="visually-hidden">Tear Sheet</span>
+        </a>
       </nav>
     </main>
 
     <!-- Footer copyright removed per request -->
 
     <script type="module">
-      // Pixel sword cursor (disabled for illuminated experiment)
+      // Pixel sword cursor (disabled for marginalia experiment)
       const swordsEnabled = false;
       const splash = document.querySelector('.splash');
       if (swordsEnabled && splash && matchMedia('(pointer:fine)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
