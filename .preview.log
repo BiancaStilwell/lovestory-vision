@@ -288,3 +288,52 @@
 [I 250830 13:32:17 handlers:135] Browser Connected: http://localhost:5175/
 [I 250830 13:32:40 handlers:92] Reload 1 waiters: styles.css
 [I 250830 13:33:18 handlers:92] Reload 1 waiters: styles.css
+[I 250830 13:38:00 handlers:135] Browser Connected: http://localhost:5175/
+[I 250830 13:39:50 handlers:92] Reload 1 waiters: styles.css
+[I 250830 13:40:39 handlers:92] Reload 1 waiters: styles.css
+[I 250830 13:41:10 handlers:135] Browser Connected: http://localhost:5175/
+[I 250830 13:41:26 handlers:92] Reload 1 waiters: styles.css
+[I 250830 13:41:36 handlers:135] Browser Connected: http://localhost:5175/pages/about.html
+[I 250830 13:41:38 handlers:135] Browser Connected: http://localhost:5175/
+[I 250830 13:41:43 handlers:135] Browser Connected: http://localhost:5175/pages/contact.html#tearsheet
+[I 250830 13:41:45 handlers:135] Browser Connected: http://localhost:5175/
+[I 250830 13:41:46 handlers:135] Browser Connected: http://localhost:5175/pages/portfolio.html
+[I 250830 13:41:48 handlers:135] Browser Connected: http://localhost:5175/
+[I 250830 13:41:52 handlers:135] Browser Connected: http://localhost:5175/pages/portfolio.html
+[I 250830 13:41:56 handlers:135] Browser Connected: http://localhost:5175/
+[I 250830 13:42:19 handlers:92] Reload 1 waiters: styles.css
+[W 250830 13:43:30 web:2407] 404 GET /assets/icons/favicon.svg (127.0.0.1) 0.39ms
+[I 250830 13:43:30 handlers:135] Browser Connected: http://localhost:5175/pages/portfolio.html
+[I 250830 13:43:32 handlers:135] Browser Connected: http://localhost:5175/
+[W 250830 13:43:32 web:2407] 404 GET /assets/icons/favicon.svg (127.0.0.1) 2.49ms
+[I 250830 13:43:33 handlers:135] Browser Connected: http://localhost:5175/pages/contact.html#tearsheet
+[I 250830 13:43:35 handlers:135] Browser Connected: http://localhost:5175/
+[I 250830 13:43:36 handlers:135] Browser Connected: http://localhost:5175/pages/press.html
+[I 250830 13:43:38 handlers:135] Browser Connected: http://localhost:5175/
+[I 250830 13:43:52 handlers:92] Reload 1 waiters: styles.css
+[I 250830 13:44:40 handlers:92] Reload 1 waiters: styles.css
+[I 250830 13:45:28 handlers:92] Reload 1 waiters: styles.css
+[I 250830 13:46:14 handlers:92] Reload 1 waiters: styles.css
+[I 250830 13:47:02 handlers:135] Browser Connected: http://localhost:5175/pages/portfolio.html
+[I 250830 13:47:05 handlers:135] Browser Connected: http://localhost:5175/
+[W 250830 13:47:05 web:2407] 404 GET /assets/icons/favicon.svg (127.0.0.1) 0.67ms
+[I 250830 13:48:13 handlers:92] Reload 1 waiters: pages/tearsheet.html
+[I 250830 13:48:13 handlers:135] Browser Connected: http://localhost:5175/
+[I 250830 13:49:08 handlers:135] Browser Connected: http://localhost:5175/pages/portfolio.html
+[I 250830 13:49:11 handlers:135] Browser Connected: http://localhost:5175/
+[W 250830 13:49:11 web:2407] 404 GET /assets/icons/favicon.svg (127.0.0.1) 0.56ms
+[I 250830 13:49:12 handlers:92] Reload 1 waiters: pages/contact.html
+[I 250830 13:49:12 handlers:135] Browser Connected: http://localhost:5175/
+[W 250830 13:49:12 web:2407] 404 GET /assets/icons/home.png (127.0.0.1) 0.46ms
+[I 250830 13:49:12 handlers:135] Browser Connected: http://localhost:5175/pages/tearsheet.html
+[I 250830 13:49:14 handlers:135] Browser Connected: http://localhost:5175/
+[I 250830 13:49:18 handlers:135] Browser Connected: http://localhost:5175/pages/contact.html
+[I 250830 13:49:24 handlers:135] Browser Connected: http://localhost:5175/
+[I 250830 13:49:26 handlers:135] Browser Connected: http://localhost:5175/pages/about.html
+[I 250830 13:49:27 handlers:135] Browser Connected: http://localhost:5175/
+[I 250830 13:50:06 handlers:92] Reload 1 waiters: pages/portfolio.html
+[I 250830 13:50:06 handlers:135] Browser Connected: http://localhost:5175/
+[I 250830 13:50:55 handlers:92] Reload 1 waiters: pages/about.html
+[I 250830 13:50:55 handlers:135] Browser Connected: http://localhost:5175/
+[I 250830 13:51:41 handlers:92] Reload 1 waiters: pages/press.html
+[I 250830 13:51:41 handlers:135] Browser Connected: http://localhost:5175/

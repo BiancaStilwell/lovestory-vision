@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tear Sheet — Bianca</title>
+    <meta name="description" content="Download Bianca’s tear sheet (password protected).">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
+    <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" role="banner">
+      <div class="wrap">
+        <button class="menu-toggle" aria-expanded="false" aria-controls="site-menu" aria-label="Menu">☰</button>
+        <nav aria-label="Main" class="main-nav" id="site-menu" hidden>
+          <ul>
+            <li><a href="../">Home</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="press.html">Press</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="page" style="display:grid; place-items:center; min-height: 72vh;">
+      <section aria-labelledby="tearsheet-title" style="text-align:center;">
+        <h1 id="tearsheet-title">Download Tear Sheet</h1>
+        <p>Enter the password to unlock the download.</p>
+        <form id="ts-form" onsubmit="return false" style="display: grid; grid-template-columns: 1fr auto; gap: 10px; max-width: 420px; margin: 0 auto;">
+          <label for="ts-pass" class="visually-hidden">Password</label>
+          <input type="password" id="ts-pass" name="ts-pass" placeholder="Password" autocomplete="off" required style="padding: 10px; border: 1px solid rgba(0,0,0,0.2); border-radius: 6px;">
+          <button id="ts-btn" type="button" style="padding: 10px 14px; border-radius: 6px; border: 1px solid rgba(0,0,0,0.2); background: #f7f7f7; cursor: pointer;">Unlock</button>
+          <p id="ts-msg" class="muted" role="status" aria-live="polite" style="grid-column: 1 / -1; margin: 0;"></p>
+          <p id="ts-link-wrap" hidden style="grid-column: 1 / -1; margin: 0;">
+            <a id="ts-link" href="../assets/docs/tearsheet.pdf" download>Download tear sheet (PDF)</a>
+          </p>
+        </form>
+        <!-- TODO:COPY tearsheet.password -->
+      </section>
+    </main>
+
+    <a class="home-fab" href="../"><img src="../assets/icons/home.png" alt="Home"></a>
+    <script type="module">
+      // Menu toggle
+      const mbtn = document.querySelector('.menu-toggle');
+      const menu = document.getElementById('site-menu');
+      mbtn?.addEventListener('click', () => {
+        const open = mbtn.getAttribute('aria-expanded') === 'true';
+        mbtn.setAttribute('aria-expanded', String(!open));
+        if (open) menu.setAttribute('hidden', ''); else menu.removeAttribute('hidden');
+      });
+
+      // Soft password gate
+      const TEARSHEET_PASSWORD = 'mirror'; // TODO:COPY tearsheet.password
+      const btn = document.getElementById('ts-btn');
+      const input = document.getElementById('ts-pass');
+      const msg = document.getElementById('ts-msg');
+      const wrap = document.getElementById('ts-link-wrap');
+      btn?.addEventListener('click', () => {
+        const ok = input.value.trim() === TEARSHEET_PASSWORD;
+        wrap.hidden = !ok;
+        msg.textContent = ok ? 'Unlocked.' : 'Incorrect password. Try again.';
+        input.setAttribute('aria-invalid', ok ? 'false' : 'true');
+      });
+      input?.addEventListener('keydown', (e) => { if (e.key === 'Enter') btn.click(); });
+    </script>
+  </body>
+  </html>
+
