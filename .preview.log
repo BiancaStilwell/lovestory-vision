@@ -32,3 +32,20 @@
 [I 250830 10:12:59 handlers:135] Browser Connected: http://localhost:5175/
 [I 250830 10:13:39 handlers:135] Browser Connected: http://localhost:5175/
 [I 250830 10:13:42 handlers:92] Reload 1 waiters: styles.css
+[I 250830 10:14:50 handlers:135] Browser Connected: http://localhost:5175/
+[I 250830 10:15:29 handlers:135] Browser Connected: http://localhost:5175/
+[I 250830 10:18:38 handlers:135] Browser Connected: http://localhost:5175/
+[I 250830 10:21:00 handlers:92] Reload 1 waiters: styles.css
+[I 250830 10:21:59 handlers:135] Browser Connected: http://localhost:5175/pages/contact.html#tearsheet
+[I 250830 10:22:02 handlers:135] Browser Connected: http://localhost:5175/
+[I 250830 10:22:03 handlers:135] Browser Connected: http://localhost:5175/pages/press.html
+[I 250830 10:22:07 handlers:135] Browser Connected: http://localhost:5175/
+[I 250830 10:22:09 handlers:135] Browser Connected: http://localhost:5175/pages/portfolio.html
+[I 250830 10:22:11 handlers:135] Browser Connected: http://localhost:5175/
+[I 250830 10:22:13 handlers:135] Browser Connected: http://localhost:5175/pages/contact.html
+[I 250830 10:22:14 handlers:92] Reload 1 waiters: styles.css
+[I 250830 10:22:15 handlers:135] Browser Connected: http://localhost:5175/
+[I 250830 10:22:16 handlers:135] Browser Connected: http://localhost:5175/pages/about.html
+[I 250830 10:22:18 handlers:135] Browser Connected: http://localhost:5175/
+[I 250830 10:22:58 handlers:92] Reload 1 waiters: styles.css
+[I 250830 10:23:47 handlers:92] Reload 1 waiters: styles.css
