@@ -114,3 +114,56 @@
 [I 250830 17:58:36 handlers:135] Browser Connected: http://localhost:5177/pages/tearsheet.html
 [W 250830 17:58:36 web:2407] 404 GET /assets/icons/favicon.svg (127.0.0.1) 1.45ms
 [I 250830 17:59:36 handlers:92] Reload 1 waiters: styles.css
+[I 250830 18:01:19 handlers:135] Browser Connected: http://localhost:5177/pages/tearsheet.html
+[W 250830 18:01:33 web:2407] 404 GET /assets/icons/favicon.svg (127.0.0.1) 0.45ms
+[I 250830 18:01:33 handlers:135] Browser Connected: http://localhost:5177/
+[I 250830 18:01:34 handlers:135] Browser Connected: http://localhost:5177/pages/about.html
+[I 250830 18:01:37 handlers:135] Browser Connected: http://localhost:5177/
+[I 250830 18:01:39 handlers:135] Browser Connected: http://localhost:5177/pages/press.html
+[I 250830 18:01:41 handlers:135] Browser Connected: http://localhost:5177/
+[I 250830 18:02:16 handlers:135] Browser Connected: http://localhost:5177/pages/press.html
+[I 250830 18:02:19 handlers:135] Browser Connected: http://localhost:5177/
+[I 250830 18:02:22 handlers:135] Browser Connected: http://localhost:5177/pages/press.html
+[I 250830 18:02:23 handlers:135] Browser Connected: http://localhost:5177/
+[I 250830 18:03:09 handlers:92] Reload 1 waiters: assets/icons/ChatGPT Image Aug 30, 2025, 06_02_45 PM.png
+[I 250830 18:03:19 handlers:92] Reload 1 waiters: assets/icons/unlock.png
+[I 250830 18:03:27 handlers:92] Reload 1 waiters: assets/icons/unlock.png
+[I 250830 18:03:28 handlers:82] Ignore: assets/icons/ChatGPT Image Aug 30, 2025, 06_02_45 PM.png
+[W 250830 18:03:33 web:2407] 404 GET /assets/icons/favicon.svg (127.0.0.1) 0.37ms
+[I 250830 18:03:33 handlers:135] Browser Connected: http://localhost:5177/pages/tearsheet.html
+[I 250830 18:05:28 handlers:92] Reload 1 waiters: pages/tearsheet.html
+[I 250830 18:05:28 handlers:135] Browser Connected: http://localhost:5177/pages/tearsheet.html
+[W 250830 18:05:28 web:2407] 404 GET /assets/icons/favicon.svg (127.0.0.1) 0.79ms
+[I 250830 18:06:27 handlers:92] Reload 1 waiters: styles.css
+[W 250830 18:07:31 web:2407] 404 GET /assets/icons/favicon.svg (127.0.0.1) 0.50ms
+[I 250830 18:07:31 handlers:135] Browser Connected: http://localhost:5177/
+[I 250830 18:07:33 handlers:135] Browser Connected: http://localhost:5177/pages/about.html
+[I 250830 18:07:35 handlers:135] Browser Connected: http://localhost:5177/
+[I 250830 18:07:37 handlers:135] Browser Connected: http://localhost:5177/pages/press.html
+[I 250830 18:07:42 handlers:135] Browser Connected: http://localhost:5177/
+[I 250830 18:07:44 handlers:135] Browser Connected: http://localhost:5177/pages/contact.html
+[I 250830 18:08:24 handlers:135] Browser Connected: http://localhost:5177/
+[I 250830 18:08:26 handlers:135] Browser Connected: http://localhost:5177/pages/tearsheet.html
+[I 250830 18:08:30 handlers:135] Browser Connected: http://localhost:5177/pages/tearsheet.html
+[I 250830 18:09:00 handlers:135] Browser Connected: http://192.168.1.41:5177/
+[I 250830 18:09:00 handlers:135] Browser Connected: http://192.168.1.41:5177/
+[I 250830 18:09:04 handlers:135] Browser Connected: http://192.168.1.41:5177/
+[I 250830 18:09:05 handlers:135] Browser Connected: http://192.168.1.41:5177/pages/tearsheet.html
+[I 250830 18:10:14 handlers:135] Browser Connected: http://localhost:5177/pages/tearsheet.html
+[I 250830 18:11:04 handlers:135] Browser Connected: http://192.168.1.41:5177/pages/tearsheet.html
+[I 250830 18:11:05 handlers:135] Browser Connected: http://192.168.1.41:5177/
+[I 250830 18:11:06 handlers:135] Browser Connected: http://192.168.1.41:5177/pages/press.html
+[I 250830 18:11:09 handlers:135] Browser Connected: http://192.168.1.41:5177/
+[I 250830 18:11:11 handlers:135] Browser Connected: http://192.168.1.41:5177/pages/contact.html
+[I 250830 18:11:14 handlers:135] Browser Connected: http://192.168.1.41:5177/
+[I 250830 18:11:22 handlers:92] Reload 2 waiters: pages/tearsheet.html
+[I 250830 18:11:22 handlers:135] Browser Connected: http://localhost:5177/pages/tearsheet.html
+[I 250830 18:11:29 handlers:135] Browser Connected: http://localhost:5177/pages/tearsheet.html
+[I 250830 18:12:11 handlers:135] Browser Connected: http://localhost:5177/
+[I 250830 18:12:17 handlers:135] Browser Connected: http://localhost:5177/pages/portfolio.html
+[I 250830 18:12:24 handlers:92] Reload 1 waiters: styles.css
+[I 250830 18:15:09 handlers:135] Browser Connected: http://localhost:5177/
+[I 250830 18:15:18 handlers:135] Browser Connected: http://localhost:5177/pages/tearsheet.html
+[I 250830 18:17:01 handlers:92] Reload 1 waiters: styles.css
+[I 250830 18:18:02 handlers:92] Reload 1 waiters: pages/portfolio.html
+[I 250830 18:18:02 handlers:135] Browser Connected: http://localhost:5177/pages/tearsheet.html
