@@ -12,6 +12,10 @@ Drop files into these folders; I’ll wire them up.
 - PDF tear sheet: `assets/docs/tearsheet.pdf`
   - Export as a single PDF; keep file name exactly `tearsheet.pdf` so the “Download Tearsheet” link works.
 
+Hero background image (landing page):
+- Put the chosen image at `assets/img/hero.jpg` (JPEG) or `assets/img/hero.webp`.
+- If you drop it in `_INBOX`, I’ll move/rename it for you.
+
 - Bio & contact: send in plain text or paste into a message.
 
 Once files are in place, I’ll optimize and update the pages.
