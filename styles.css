@@ -88,7 +88,7 @@ input, button, select, textarea { font: inherit; }
 .marginalia-grid .m-link:nth-child(1){ left: 50%; top: 36vh; transform: translateX(-50%); }
 .marginalia-grid .m-link:nth-child(1) .nav-icon { width: clamp(380px, 46vw, 960px); height: auto; }
 /* 2) Portfolio (cracked oval) — centered above Tear Sheet */
-.marginalia-grid .m-link:nth-child(2){ left: var(--left-col); top: 38vh; transform: translateX(-50%); }
+.marginalia-grid .m-link:nth-child(2){ left: var(--left-col); top: 15vh; transform: translateX(-50%); }
 .marginalia-grid .m-link:nth-child(2) .nav-icon { width: clamp(120px, 14vw, 260px); height: auto; }
 /* 3) Contact (tall drape) — move slightly right to clear Press */
 .marginalia-grid .m-link:nth-child(3){ right: 2vw; top: 8vh; }
@@ -121,7 +121,7 @@ input, button, select, textarea { font: inherit; }
   .marginalia-grid { min-height: 96vh; --left-col: 24vw; }
   /* tighten positions on small screens and keep oval centered above Tear Sheet */
   .marginalia-grid .m-link:nth-child(1){ top: 34vh; }
-  .marginalia-grid .m-link:nth-child(2){ left: var(--left-col); top: 40vh; transform: translateX(-50%); }
+  .marginalia-grid .m-link:nth-child(2){ left: var(--left-col); top: 20vh; transform: translateX(-50%); }
   .marginalia-grid .m-link:nth-child(3){ right: 2vw; top: 10vh; }
   .marginalia-grid .m-link:nth-child(4){ left: var(--left-col); top: 64vh; transform: translateX(-50%); }
   .marginalia-grid .m-link:nth-child(5){ left: 68vw; top: 52vh; }
