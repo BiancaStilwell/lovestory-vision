@@ -91,12 +91,11 @@ input, button, select, textarea { font: inherit; }
 .m-link .symbol-img, .m-link .nav-icon { width: 86%; height: 86%; object-fit: contain; filter: drop-shadow(0 6px 18px rgba(0,0,0,0.18)); /* preserve original tones */ mix-blend-mode: normal; transform: scale(1); transition: transform .35s ease; }
 /* About icon matches (approximately) the Love Story title width */
 .marginalia-grid .m-link:nth-child(1) .nav-icon { width: min(78vw, var(--title-w, 560px)); height: auto; }
-/* Top icon slightly bigger (2nd item visually on top-right) */
-.marginalia-grid .m-link:nth-child(2) .nav-icon { transform: scale(1.12); }
-/* Mirror smaller: assuming the cracked-oval is tearsheet (4th) */
-.marginalia-grid .m-link:nth-child(4) .nav-icon { transform: scale(0.75); }
-/* Press modest size */
-.marginalia-grid .m-link:nth-child(5) .nav-icon { transform: scale(0.92); }
+/* Icon fine-tuning */
+.marginalia-grid .m-link:nth-child(2) .nav-icon { transform: scale(1.12); }  /* Portfolio a touch larger */
+.marginalia-grid .m-link:nth-child(3) .nav-icon { transform: scale(0.90); }  /* Contact slightly smaller */
+.marginalia-grid .m-link:nth-child(4) .nav-icon { transform: scale(0.96); }  /* Tear Sheet slightly bigger */
+.marginalia-grid .m-link:nth-child(5) .nav-icon { transform: scale(0.85); }  /* Press slightly smaller */
 .m-link .word { position: absolute; inset: 0; display: grid; place-items: center; font-family: var(--font-display); font-size: clamp(36px, 5.8vw, 72px); line-height: 1; letter-spacing: 0.01em; opacity: 0; transform: scale(0.94); transition: transform .35s ease, opacity .35s ease; color: #111; text-align: center; padding: 8px; text-shadow: none; background: none; -webkit-background-clip: initial; }
 .m-link:hover .word, .m-link:focus .word { opacity: 1; transform: scale(1) rotate(0deg); animation: glowPulse 2.2s ease-in-out infinite; }
 .m-link:hover .doodle, .m-link:focus .doodle { opacity: .35; transform: scale(.94) rotate(-4deg); }
