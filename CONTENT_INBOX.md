@@ -20,6 +20,14 @@ Custom snail cursor (landing page):
 - Save your snail image as `assets/icons/snail-cursor.png` (PNG) or `snail-cursor.webp`/`snail-cursor.svg`.
 - I’ll use it automatically; otherwise a vector fallback snail is shown.
 
+Landing symbols (replace the doodles):
+- Drop four PNGs at `assets/img/symbols/` with these exact names:
+  - `about.png`
+  - `portfolio.png`
+  - `contact.png`
+  - `tearsheet.png`
+- They will appear automatically on the landing page and fade under the hover word animation.
+
 - Bio & contact: send in plain text or paste into a message.
 
 Once files are in place, I’ll optimize and update the pages.

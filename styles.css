@@ -85,9 +85,10 @@ input, button, select, textarea { font: inherit; }
 .m-link { --bd: var(--dur,6s); --glow: #ff00ee; position: relative; display: grid; place-items: center; width: clamp(180px, 26vw, 280px); aspect-ratio: 1/1; text-decoration: none; color: #111; animation: breathe var(--bd) ease-in-out infinite var(--delay,0s); }
 .m-link .doodle { position: absolute; inset: 0; display: grid; place-items: center; transition: transform .6s ease, opacity .6s ease, filter .6s ease; filter: hue-rotate(var(--hue, 0deg)) saturate(1.6) contrast(1.15); }
 .m-link .doodle svg { width: 90%; height: 90%; filter: drop-shadow(0 6px 20px rgba(0,0,0,0.15)); animation: wiggle calc(var(--bd) * 1.1) ease-in-out infinite alternate, hueDance 10s linear infinite; }
+.m-link .symbol-img { width: 90%; height: 90%; object-fit: contain; filter: drop-shadow(0 6px 18px rgba(0,0,0,0.18)); mix-blend-mode: multiply; }
 .m-link .word { position: absolute; inset: 0; display: grid; place-items: center; font-family: var(--font-display); font-size: clamp(40px, 6.5vw, 80px); line-height: 1; text-transform: none; letter-spacing: 0.01em; opacity: 0; transform: scale(0.9) rotate(-2deg); transition: transform .5s cubic-bezier(.2,.8,.2,1), opacity .5s ease, filter .4s ease; background: conic-gradient(from 0deg, #ff00ee, #ffdd00, #00ffd5, #b400ff, #ff00ee); -webkit-background-clip: text; background-clip: text; color: transparent; filter: drop-shadow(0 0 12px rgba(255,0,238,.35)) drop-shadow(0 0 24px rgba(255,221,0,.25)); text-align: center; padding: 8px; }
 .m-link:hover .word, .m-link:focus .word { opacity: 1; transform: scale(1) rotate(0deg); animation: glowPulse 2.2s ease-in-out infinite; }
-.m-link:hover .doodle, .m-link:focus .doodle { opacity: .15; transform: scale(.9) rotate(-6deg); filter: blur(1px) contrast(1.2) saturate(1.2); }
+.m-link:hover .doodle, .m-link:focus .doodle { opacity: .2; transform: scale(.9) rotate(-6deg); filter: blur(1px) contrast(1.2) saturate(1.2); }
 
 @keyframes breathe { 0%,100% { transform: scale(1); } 50% { transform: scale(1.025); } }
 @keyframes glowPulse { 0%,100% { filter: drop-shadow(0 0 8px rgba(255,0,238,.3)) drop-shadow(0 0 18px rgba(255,221,0,.16)); } 50% { filter: drop-shadow(0 0 18px rgba(255,0,238,.45)) drop-shadow(0 0 34px rgba(255,221,0,.26)); } }
