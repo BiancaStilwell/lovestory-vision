@@ -77,7 +77,7 @@ input, button, select, textarea { font: inherit; }
 .illuminated-grid { display: none; }
 
 /* Chaotic marginalia menu */
-.marginalia-grid { position: relative; z-index: 2; display: grid; grid-template-columns: repeat(3, minmax(160px, 1fr)); grid-template-rows: auto auto auto; row-gap: clamp(8px, 2.8vh, 20px); column-gap: clamp(30px, 7vw, 96px); justify-items: center; align-items: start; align-content: start; justify-content: center; padding: calc(var(--brand-h, 140px) + 16px) clamp(20px, 5vw, 48px) 6vh; margin: 0 auto; max-width: 1200px; }
+.marginalia-grid { position: relative; z-index: 2; display: grid; grid-template-columns: repeat(3, minmax(160px, 1fr)); grid-template-rows: auto auto auto; row-gap: clamp(8px, 2.8vh, 20px); column-gap: clamp(30px, 7vw, 96px); justify-items: center; align-items: start; align-content: start; justify-content: center; padding: calc(var(--brand-h, 140px) + 8px) clamp(20px, 5vw, 48px) 6vh; margin: 0 auto; max-width: 1200px; }
 /* Positions are defined in the layout overrides further below */
 .m-link { --bd: var(--dur,6s); --glow: #ff00ee; position: relative; display: grid; place-items: center; width: clamp(180px, 26vw, 280px); aspect-ratio: 1/1; text-decoration: none; color: #111; animation: breathe var(--bd) ease-in-out infinite var(--delay,0s); }
 .m-link .doodle { position: absolute; inset: 0; display: grid; place-items: center; transition: transform .6s ease, opacity .6s ease; /* keep original icon color */ filter: none; }
@@ -109,7 +109,7 @@ input, button, select, textarea { font: inherit; }
 @keyframes shimmer { 0% { filter: hue-rotate(0deg) brightness(1); } 100% { filter: hue-rotate(10deg) brightness(1.06); background-position: 0 0, 10% -6%, 0 0; } }
 
 @media (max-width: 720px) {
-  .marginalia-grid { grid-template-columns: 1fr; min-height: 86vh; padding-top: clamp(240px, 52vh, 420px); }
+  .marginalia-grid { grid-template-columns: 1fr; min-height: 86vh; padding-top: calc(var(--brand-h, 220px) + 8px); }
 }
 
 /* Full-screen exploding word overlay */
@@ -160,8 +160,8 @@ input, button, select, textarea { font: inherit; }
 .splash::before { content: none !important; }
 
 /* Landing layout overrides for 5 icons */
-/* About centered under title */
-.marginalia-grid .m-link:nth-child(1){ grid-column: 2; grid-row: 2; align-self: start; justify-self: center; margin-top: -4vh; }
+/* About centered under title (exactly below Love Story) */
+.marginalia-grid .m-link:nth-child(1){ grid-column: 2; grid-row: 1; align-self: start; justify-self: center; margin-top: 0; }
 /* Top row left/right */
 .marginalia-grid .m-link:nth-child(2){ grid-column: 1; grid-row: 1; align-self: start; justify-self: end;   margin-top: -4vh; }
 .marginalia-grid .m-link:nth-child(3){ grid-column: 3; grid-row: 1; align-self: start; justify-self: start; margin-top: -4vh; }
