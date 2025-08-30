@@ -138,7 +138,7 @@ input, button, select, textarea { font: inherit; }
 
 /* Landing brand title — place above center drape (About) */
 .ls-brand { position: absolute; top: 22vh; left: 50%; transform: translateX(-50%); z-index: 3; display: grid; place-items: center; text-align: center; pointer-events: none; width: 100%; }
-.ls-title { font-family: var(--font-display); font-weight: 800; letter-spacing: 0.02em; font-size: clamp(46px, 9.9vw, 132px); color: var(--text); text-shadow: 0 2px 12px rgba(255,255,255,0.6), 0 8px 30px rgba(0,0,0,0.2); line-height: 0.9; }
+.ls-title { font-family: var(--font-display); font-weight: 800; letter-spacing: 0.02em; font-style: italic; font-size: clamp(45px, 9.6vw, 128px); color: var(--text); text-shadow: 0 2px 12px rgba(255,255,255,0.6), 0 8px 30px rgba(0,0,0,0.2); line-height: 0.9; }
 .ls-sub { font-family: var(--font-display); font-weight: 400; letter-spacing: 0.02em; font-size: clamp(14px, 2.6vw, 28px); color: var(--text); opacity: 0.9; text-shadow: 0 2px 10px rgba(255,255,255,0.5), 0 6px 20px rgba(0,0,0,0.18); margin-top: 2px; }
 
 .bubbles { position: relative; z-index: 2; height: 100vh; }
@@ -185,7 +185,7 @@ input, button, select, textarea { font: inherit; }
 .marginalia-grid .m-link:nth-child(5){ grid-column: 3; grid-row: 3; align-self: start; justify-self: end;   margin-top: -22vh; }
 
 /* Title stack adjustments */
-.ls-author { font-family: 'Ballet', cursive; font-weight: 400; letter-spacing: 0.01em; font-size: clamp(18px, 2.6vw, 30px); color: var(--text); opacity: 0.95; text-shadow: 0 2px 10px rgba(255,255,255,0.5), 0 6px 20px rgba(0,0,0,0.18); margin-bottom: 0; font-optical-sizing: auto; }
+.ls-author { font-family: 'Ballet', cursive; font-weight: 400; letter-spacing: 0.01em; font-size: clamp(18.2px, 2.626vw, 30.3px); color: var(--text); opacity: 0.95; text-shadow: 0 2px 10px rgba(255,255,255,0.5), 0 6px 20px rgba(0,0,0,0.18); margin-bottom: 0; font-optical-sizing: auto; }
 /* remove older size override; size now set above */
 .hero, .hero-inner, .hero-title, .hero-sub, .hero-actions, .hero-graphic { display: none; }
 
