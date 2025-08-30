@@ -35,32 +35,7 @@
       <nav class="marginalia-grid" aria-label="Primary">
         <a class="m-link" href="pages/about.html" style="--dur:7s;--delay:-1s;--hue:40deg;" data-letter="A" data-word="About">
           <span class="doodle" aria-hidden="true">
-            <img class="symbol-img" src="assets/img/symbols/about.svg" alt="" onerror="this.style.display='none'">
-            <!-- Weird snail with feet → psychedelic -->
-            <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img">
-              <defs>
-                <linearGradient id="grad-snail" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#ff00ee"/>
-                  <stop offset="50%" stop-color="#ffd400"/>
-                  <stop offset="100%" stop-color="#00ffd5"/>
-                </linearGradient>
-                <filter id="wobble-snail" x="-20%" y="-20%" width="140%" height="140%">
-                  <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="3" result="noise"/>
-                  <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" xChannelSelector="R" yChannelSelector="G"/>
-                </filter>
-              </defs>
-              <g fill="none" stroke="url(#grad-snail)" stroke-width="4" filter="url(#wobble-snail)">
-                <!-- shell spiral -->
-                <path d="M55 72c-10-2-16-9-16-17 0-10 9-18 20-18s20 8 20 18c0 9-8 16-18 17"/>
-                <path d="M60 67c-7-1-11-6-11-11 0-6 6-11 13-11s13 5 13 11c0 6-5 10-12 11"/>
-                <!-- body -->
-                <path d="M22 78c8 0 16-6 24-6h28c6 0 10 5 11 10H22z"/>
-                <!-- feet -->
-                <path d="M30 82h6M40 82h6M50 82h6M80 82h6"/>
-                <!-- eyes -->
-                <path d="M70 57l5-8M76 57l5-10"/>
-              </g>
-            </svg>
+            <img src="icons/drape_top_swag.svg" class="nav-icon" alt="About">
           </span>
           <span class="word" aria-hidden="true">About</span>
           <span class="visually-hidden">About</span>
@@ -68,33 +43,7 @@
 
         <a class="m-link" href="pages/portfolio.html" style="--dur:6.6s;--delay:-2s;--hue:310deg;" data-letter="P" data-word="Portfolio">
           <span class="doodle" aria-hidden="true">
-            <img class="symbol-img" src="assets/img/symbols/portfolio.svg" alt="" onerror="this.style.display='none'">
-            <!-- Scary rabbit with sword -->
-            <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img">
-              <defs>
-                <linearGradient id="grad-rabbit" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#00ffd5"/>
-                  <stop offset="50%" stop-color="#b400ff"/>
-                  <stop offset="100%" stop-color="#ff0080"/>
-                </linearGradient>
-                <filter id="glow-rabbit" x="-50%" y="-50%" width="200%" height="200%">
-                  <feGaussianBlur stdDeviation="2" result="b"/>
-                  <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-                </filter>
-              </defs>
-              <g fill="none" stroke="url(#grad-rabbit)" stroke-width="4" filter="url(#glow-rabbit)">
-                <!-- ears -->
-                <path d="M48 28c-4 10-3 22 0 30M72 28c4 10 3 22 0 30"/>
-                <!-- head -->
-                <circle cx="60" cy="58" r="12"/>
-                <!-- fangs -->
-                <path d="M56 67v6M64 67v6"/>
-                <!-- body -->
-                <ellipse cx="60" cy="78" rx="18" ry="12"/>
-                <!-- forward sword -->
-                <path d="M82 46l20-8M94 36l8 10M78 50l10-14"/>
-              </g>
-            </svg>
+            <img src="icons/mirror_oval_crack_drape_top.svg" class="nav-icon" alt="Portfolio">
           </span>
           <span class="word" aria-hidden="true">Portfolio</span>
           <span class="visually-hidden">Portfolio</span>
@@ -102,26 +51,7 @@
 
         <a class="m-link" href="pages/contact.html" style="--dur:7.4s;--delay:-3s;--hue:120deg;" data-letter="C" data-word="Contact">
           <span class="doodle" aria-hidden="true">
-            <img class="symbol-img" src="assets/img/symbols/contact.svg" alt="" onerror="this.style.display='none'">
-            <!-- Monk with oversized head, halo -->
-            <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img">
-              <defs>
-                <linearGradient id="grad-monk" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#ffd400"/>
-                  <stop offset="100%" stop-color="#00ffd5"/>
-                </linearGradient>
-                <filter id="wobble-monk" x="-20%" y="-20%" width="140%" height="140%">
-                  <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" seed="7" result="noise"/>
-                  <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.6"/>
-                </filter>
-              </defs>
-              <g fill="none" stroke="url(#grad-monk)" stroke-width="4" filter="url(#wobble-monk)">
-                <circle cx="60" cy="44" r="20"/>
-                <ellipse cx="60" cy="44" rx="30" ry="6"/>
-                <rect x="42" y="64" width="36" height="24" rx="8"/>
-                <path d="M52 74h16"/>
-              </g>
-            </svg>
+            <img src="icons/drape_side_right.svg" class="nav-icon" alt="Contact">
           </span>
           <span class="word" aria-hidden="true">Contact</span>
           <span class="visually-hidden">Contact</span>
@@ -129,23 +59,7 @@
 
         <a class="m-link" href="pages/contact.html#tearsheet" style="--dur:6.8s;--delay:-1.6s;--hue:260deg;" data-letter="T" data-word="Tear Sheet">
           <span class="doodle" aria-hidden="true">
-            <img class="symbol-img" src="assets/img/symbols/tearsheet.svg" alt="" onerror="this.style.display='none'">
-            <!-- Winged beast / chimera -->
-            <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img">
-              <defs>
-                <linearGradient id="grad-beast" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#ff8a00"/>
-                  <stop offset="50%" stop-color="#ff00ee"/>
-                  <stop offset="100%" stop-color="#00ffd5"/>
-                </linearGradient>
-              </defs>
-              <g fill="none" stroke="url(#grad-beast)" stroke-width="4">
-                <path d="M32 80c6-12 18-18 28-18s22 6 28 18H32z"/>
-                <path d="M58 46l8-10 8 10-8 3z"/>
-                <path d="M68 56l20-10M52 56L32 46"/>
-                <path d="M60 60l16 10M60 60L44 70"/>
-              </g>
-            </svg>
+            <img src="icons/mirror_oval_drape_top_clean.svg" class="nav-icon" alt="Tear Sheet">
           </span>
           <span class="word" aria-hidden="true">Tear Sheet</span>
           <span class="visually-hidden">Tear Sheet</span>
