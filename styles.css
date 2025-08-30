@@ -218,7 +218,7 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-
 
 /* Home floating button on inner pages */
 .home-fab { position: fixed; left: 16px; bottom: 16px; z-index: 50; display: inline-grid; align-items: center; justify-items: start; text-decoration: none; background: transparent; border: 0; padding: 0; gap: 2px; }
-.home-fab .home-label { font-family: 'Ballet', cursive; font-weight: 600; font-size: clamp(14.3px, 1.94vw, 19.8px); letter-spacing: 0.01em; color: var(--text); text-shadow: 0 1px 6px rgba(255,255,255,0.4), 0 2px 8px rgba(0,0,0,0.12); }
+.home-fab .home-label { font-family: 'Ballet', cursive; font-weight: 600; font-size: clamp(15.7px, 2.13vw, 21.8px); letter-spacing: 0.01em; color: var(--text); text-shadow: 0 1px 6px rgba(255,255,255,0.4), 0 2px 8px rgba(0,0,0,0.12); margin-left: 20%; }
 .home-fab img { width: clamp(56px, 7.2vw, 92px); height: auto; display: block; filter: drop-shadow(0 6px 16px rgba(0,0,0,0.18)); }
 .home-fab:hover img, .home-fab:focus img { transform: translateY(-1px); }
 
