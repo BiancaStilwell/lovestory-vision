@@ -77,7 +77,7 @@ input, button, select, textarea { font: inherit; }
 .illuminated-grid { display: none; }
 
 /* Chaotic marginalia menu → switched to freeform absolute positioning to match reference layout */
-.marginalia-grid { position: relative; z-index: 2; min-height: 96vh; margin: 0 auto; max-width: 1400px; padding: 0 2vw; }
+.marginalia-grid { position: relative; z-index: 2; min-height: 96vh; margin: 0 auto; max-width: 1400px; padding: 0 2vw; --left-col: 18vw; }
 /* place items absolutely */
 .m-link { --bd: var(--dur,6s); --glow: #ff00ee; position: absolute; display: grid; place-items: center; text-decoration: none; color: #111; animation: none; }
 .m-link .doodle { position: relative; display: grid; place-items: center; transition: transform .3s ease, opacity .3s ease; filter: none; }
@@ -87,14 +87,14 @@ input, button, select, textarea { font: inherit; }
 /* 1) About (center drape) — centered */
 .marginalia-grid .m-link:nth-child(1){ left: 50%; top: 36vh; transform: translateX(-50%); }
 .marginalia-grid .m-link:nth-child(1) .nav-icon { width: clamp(380px, 46vw, 960px); height: auto; }
-/* 2) Portfolio (cracked oval) — upper left */
-.marginalia-grid .m-link:nth-child(2){ left: 12vw; top: 14vh; }
+/* 2) Portfolio (cracked oval) — centered above Tear Sheet */
+.marginalia-grid .m-link:nth-child(2){ left: var(--left-col); top: 38vh; transform: translateX(-50%); }
 .marginalia-grid .m-link:nth-child(2) .nav-icon { width: clamp(120px, 14vw, 260px); height: auto; }
-/* 3) Contact (tall drape) — far right, high */
-.marginalia-grid .m-link:nth-child(3){ right: 6vw; top: 8vh; }
+/* 3) Contact (tall drape) — move slightly right to clear Press */
+.marginalia-grid .m-link:nth-child(3){ right: 2vw; top: 8vh; }
 .marginalia-grid .m-link:nth-child(3) .nav-icon { width: clamp(130px, 12vw, 260px); height: auto; }
-/* 4) Tear Sheet (short drape) — lower left */
-.marginalia-grid .m-link:nth-child(4){ left: 11vw; top: 60vh; }
+/* 4) Tear Sheet (short drape) — lower left; defines the center for Portfolio above */
+.marginalia-grid .m-link:nth-child(4){ left: var(--left-col); top: 60vh; transform: translateX(-50%); }
 .marginalia-grid .m-link:nth-child(4) .nav-icon { width: clamp(120px, 13vw, 240px); height: auto; }
 /* 5) Press (long drape) — mid-right, lower than contact */
 .marginalia-grid .m-link:nth-child(5){ left: 72vw; top: 44vh; }
@@ -118,12 +118,12 @@ input, button, select, textarea { font: inherit; }
 @keyframes shimmer { 0% { filter: hue-rotate(0deg) brightness(1); } 100% { filter: hue-rotate(10deg) brightness(1.06); background-position: 0 0, 10% -6%, 0 0; } }
 
 @media (max-width: 720px) {
-  .marginalia-grid { min-height: 96vh; }
-  /* tighten positions on small screens */
+  .marginalia-grid { min-height: 96vh; --left-col: 24vw; }
+  /* tighten positions on small screens and keep oval centered above Tear Sheet */
   .marginalia-grid .m-link:nth-child(1){ top: 34vh; }
-  .marginalia-grid .m-link:nth-child(2){ left: 8vw; top: 10vh; }
-  .marginalia-grid .m-link:nth-child(3){ right: 4vw; top: 10vh; }
-  .marginalia-grid .m-link:nth-child(4){ left: 8vw; top: 62vh; }
+  .marginalia-grid .m-link:nth-child(2){ left: var(--left-col); top: 40vh; transform: translateX(-50%); }
+  .marginalia-grid .m-link:nth-child(3){ right: 2vw; top: 10vh; }
+  .marginalia-grid .m-link:nth-child(4){ left: var(--left-col); top: 64vh; transform: translateX(-50%); }
   .marginalia-grid .m-link:nth-child(5){ left: 68vw; top: 52vh; }
 }
 
