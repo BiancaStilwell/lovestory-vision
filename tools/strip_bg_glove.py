@@ -30,7 +30,7 @@ def strip_bg(path: Path) -> None:
             sat = mx - mn
             light = (r + g + b) / 3
             # Heuristic: bright, low-saturation pixels → background
-            if light > 220 and sat < 24:
+            if (light > 235 and sat < 40) or (light > 210 and sat < 26):
                 m[x, y] = 0
             else:
                 m[x, y] = 255
@@ -52,4 +52,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
