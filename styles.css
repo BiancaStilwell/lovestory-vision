@@ -10,6 +10,7 @@
   --electric-blue: #1e21ff;
   --font-display: 'Amarante', Georgia, serif;
   --font-script: 'Cherish', 'Brush Script MT', cursive;
+  --video-pos-y: 28%; /* shift to crop bottom area (person) */
 }
 
 * { box-sizing: border-box; }
@@ -59,7 +60,12 @@ input, button, select, textarea { font: inherit; }
 /* Splash landing (inspired by circular buttons on reference) */
 .splash-header { display: none; }
 .splash { position: relative; min-height: 80vh; overflow: hidden; background: var(--bg); cursor: auto; }
-.splash .bg-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+.splash .bg-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% var(--video-pos-y); z-index: 0; filter: saturate(1.05) contrast(1.05); }
+.splash .bg-mask { position: absolute; inset: 0; z-index: 1; pointer-events: none; background:
+  radial-gradient(32vw 24vw at 50% 48%, rgba(0,0,0,0.35), transparent 60%),
+  radial-gradient(70vw 50vw at 50% 50%, rgba(0,0,0,0.08), transparent 70%);
+  mix-blend-mode: multiply; opacity: .9;
+}
 
 /* Pixel sword cursor (landing only) */
 .sword-cursor { position: fixed; left: 0; top: 0; z-index: 10; width: 72px; height: 72px; pointer-events: none; transform-origin: 18px 54px; filter: drop-shadow(0 2px 0 rgba(0,0,0,0.08)) drop-shadow(0 6px 14px rgba(0,0,0,0.15)); }
