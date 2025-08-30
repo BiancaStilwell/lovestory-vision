@@ -224,6 +224,40 @@
         link.addEventListener('mouseleave', hideWord);
         link.addEventListener('blur', hideWord);
       });
+
+      // Snail cursor follower (uses assets/icons/snail-cursor.{webp,png,svg} if present)
+      const snailEnabled = matchMedia('(pointer:fine)').matches && !reduce;
+      if (snailEnabled && splash) {
+        document.body.classList.add('snail-on');
+        const snail = document.createElement('div');
+        snail.className = 'snail-cursor';
+        document.body.appendChild(snail);
+
+        const fallbackSvg = encodeURIComponent(`<?xml version="1.0"?><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 76'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='#5dc2ff'/><stop offset='1' stop-color='#ff7ad9'/></linearGradient></defs><g fill='none' stroke='url(#g)' stroke-width='6'><path d='M20 56c10 0 22-8 32-8h34c8 0 12 6 13 13H20z'/><path d='M60 48c-10-2-16-9-16-17 0-10 9-18 20-18s20 8 20 18c0 9-8 16-18 17'/><path d='M74 36l8-10M82 36l10-14'/></g></svg>`);
+        const candidates = [
+          'assets/icons/snail-cursor.webp',
+          'assets/icons/snail-cursor.png',
+          'assets/icons/snail-cursor.svg'
+        ];
+        (async () => {
+          let set = false;
+          for (const src of candidates) {
+            try {
+              const res = await fetch(src, { method: 'HEAD' });
+              if (res.ok) { snail.style.backgroundImage = `url('${src}')`; set = true; break; }
+            } catch {}
+          }
+          if (!set) snail.style.backgroundImage = `url("data:image/svg+xml,${fallbackSvg}")`;
+        })();
+
+        let lastX = innerWidth/2, lastY = innerHeight/2;
+        window.addEventListener('mousemove', (e) => {
+          const x = e.clientX, y = e.clientY;
+          const ang = Math.atan2(y - lastY, x - lastX) * 180 / Math.PI;
+          snail.style.transform = `translate(${x - 24}px, ${y - 36}px) rotate(${ang}deg)`;
+          lastX = x; lastY = y;
+        });
+      }
     </script>
   </body>
 </html>

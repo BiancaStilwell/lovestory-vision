@@ -16,6 +16,10 @@ Hero background image (landing page):
 - Put the chosen image at `assets/img/hero.jpg` (JPEG) or `assets/img/hero.webp`.
 - If you drop it in `_INBOX`, I’ll move/rename it for you.
 
+Custom snail cursor (landing page):
+- Save your snail image as `assets/icons/snail-cursor.png` (PNG) or `snail-cursor.webp`/`snail-cursor.svg`.
+- I’ll use it automatically; otherwise a vector fallback snail is shown.
+
 - Bio & contact: send in plain text or paste into a message.
 
 Once files are in place, I’ll optimize and update the pages.
