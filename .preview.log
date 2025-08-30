@@ -1,0 +1,7 @@
+[I 250830 09:38:38 server:331] Serving on http://0.0.0.0:5175
+[I 250830 09:38:38 handlers:62] Start watching changes
+[I 250830 09:38:38 handlers:64] Start detecting changes
+[I 250830 09:38:39 handlers:135] Browser Connected: http://localhost:5175/
+[I 250830 09:38:40 handlers:82] Ignore: assets/icons/cursor-glove.png
+[I 250830 09:39:58 handlers:135] Browser Connected: http://localhost:5175/
+[I 250830 09:43:26 handlers:92] Reload 1 waiters: styles.css

@@ -127,7 +127,7 @@ input, button, select, textarea { font: inherit; }
 @keyframes boomOut { 0% { opacity: 1; transform: scale(1.2); } 100% { opacity: 0; transform: scale(0.85); } }
 
 /* Landing brand title — centered */
-.ls-brand { position: absolute; inset: 0; z-index: 3; display: grid; place-items: center; text-align: center; pointer-events: none; }
+.ls-brand { position: absolute; inset: 0; z-index: 3; display: grid; place-items: center; text-align: center; pointer-events: none; transform: translateY(-14vh); }
 .ls-title { font-family: var(--font-display); font-weight: 800; letter-spacing: 0.02em; font-size: clamp(42px, 9vw, 120px); color: var(--text); text-shadow: 0 2px 12px rgba(255,255,255,0.6), 0 8px 30px rgba(0,0,0,0.2); line-height: 0.9; }
 .ls-sub { font-family: var(--font-display); font-weight: 400; letter-spacing: 0.02em; font-size: clamp(14px, 2.6vw, 28px); color: var(--text); opacity: 0.9; text-shadow: 0 2px 10px rgba(255,255,255,0.5), 0 6px 20px rgba(0,0,0,0.18); margin-top: 2px; }
 
@@ -173,7 +173,7 @@ input, button, select, textarea { font: inherit; }
 .marginalia-grid .m-link:nth-child(5){ grid-column: 3; grid-row: 3; align-self: end;   justify-self: end;   transform: translate( 2vw, -10vh); }
 
 /* Title stack adjustments */
-.ls-author { font-family: var(--font-display); font-weight: 600; letter-spacing: 0.02em; font-size: clamp(16px, 2.2vw, 24px); color: var(--text); opacity: 0.95; text-shadow: 0 2px 10px rgba(255,255,255,0.5), 0 6px 20px rgba(0,0,0,0.18); margin-bottom: 6px; }
+.ls-author { font-family: var(--font-display); font-weight: 600; letter-spacing: 0.02em; font-size: clamp(16px, 2.2vw, 24px); color: var(--text); opacity: 0.95; text-shadow: 0 2px 10px rgba(255,255,255,0.5), 0 6px 20px rgba(0,0,0,0.18); margin-bottom: 0; }
 .ls-title { font-size: clamp(36px, 8vw, 100px) !important; }
 .hero, .hero-inner, .hero-title, .hero-sub, .hero-actions, .hero-graphic { display: none; }
 
