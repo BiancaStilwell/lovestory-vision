@@ -29,7 +29,7 @@
       </div>
     </header>
 
-    <main id="main" class="page" style="display:grid; place-items:center; min-height: 72vh;">
+    <main id="main" class="page" style="display:grid; place-items:center; min-height: 72vh; position: relative;">
       <section aria-labelledby="tearsheet-title" style="text-align:center;">
         <h1 id="tearsheet-title">Download Tear Sheet</h1>
         <p>Enter the password to unlock the download.</p>
@@ -46,7 +46,8 @@
       </section>
     </main>
 
-    <a class="home-fab" href="../"><img src="../assets/icons/home.png" alt="Home"></a>
+    <img src="../assets/img/symbols/tearsheet.png" alt="" class="page-icon-right high" aria-hidden="true">
+    <a class="home-fab" href="../"><span class="home-label">Home</span><img src="../assets/icons/home.png" alt="Home"></a>
     <script type="module">
       // Menu toggle
       const mbtn = document.querySelector('.menu-toggle');
@@ -73,4 +74,3 @@
     </script>
   </body>
   </html>
-
