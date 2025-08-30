@@ -58,7 +58,7 @@ input, button, select, textarea { font: inherit; }
 
 /* Splash landing (inspired by circular buttons on reference) */
 .splash-header { display: none; }
-.splash { position: relative; min-height: 80vh; overflow: hidden; background: var(--bg); }
+.splash { position: relative; min-height: 80vh; overflow: hidden; background: var(--bg); cursor: none; }
 .splash .bg {
   position: absolute; inset: 0; z-index: 0;
   background:
@@ -67,6 +67,12 @@ input, button, select, textarea { font: inherit; }
     url('assets/img/hero.png') center/cover no-repeat;
   background-color: var(--bg);
 }
+
+/* Pixel sword cursor (landing only) */
+.sword-cursor { position: fixed; left: 0; top: 0; z-index: 10; width: 72px; height: 72px; pointer-events: none; transform-origin: 18px 54px; filter: drop-shadow(0 2px 0 rgba(0,0,0,0.08)) drop-shadow(0 6px 14px rgba(0,0,0,0.15)); }
+.sword-cursor svg { width: 100%; height: 100%; image-rendering: pixelated; shape-rendering: crispEdges; }
+@media (pointer: coarse) { .splash { cursor: auto; } .sword-cursor { display: none; } }
+@media (prefers-reduced-motion: reduce) { .splash { cursor: auto; } .sword-cursor { display: none; } }
 
 /* Landing brand title */
 .ls-brand {
