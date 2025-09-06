@@ -122,6 +122,68 @@
           playButton.style.display = 'block';
         });
       }
+
+      // Image and video loading optimization
+      function preloadMedia() {
+        const images = document.querySelectorAll('.portfolio-item');
+        const videos = document.querySelectorAll('.portfolio-item[src*=".MOV"]');
+        
+        // Handle images
+        images.forEach((img) => {
+          if (img.tagName === 'IMG') {
+            // Add loading class initially
+            img.classList.add('loading');
+            
+            // Create a new Image object to preload
+            const imageLoader = new Image();
+            
+            imageLoader.onload = function() {
+              // Image loaded successfully
+              img.classList.remove('loading');
+              img.classList.add('loaded');
+            };
+            
+            imageLoader.onerror = function() {
+              // Image failed to load
+              img.classList.remove('loading');
+              img.classList.add('loaded'); // Still show it
+            };
+            
+            // Start loading the image
+            imageLoader.src = img.src;
+          }
+        });
+        
+        // Handle videos
+        videos.forEach((video) => {
+          if (video.tagName === 'VIDEO') {
+            // Add loading class initially
+            video.classList.add('loading');
+            
+            video.addEventListener('loadeddata', function() {
+              // Video loaded successfully
+              video.classList.remove('loading');
+              video.classList.add('loaded');
+            });
+            
+            video.addEventListener('error', function() {
+              // Video failed to load
+              video.classList.remove('loading');
+              video.classList.add('loaded'); // Still show it
+            });
+            
+            // Start loading the video
+            video.load();
+          }
+        });
+      }
+
+      // Wait for DOM to be ready, then preload media
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', preloadMedia);
+      } else {
+        preloadMedia();
+      }
     </script>
   </body>
   </html>
