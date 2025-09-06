@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://lovestory.vision/sitemap.xml
+
+# Block access to development files
+Disallow: /screenshots/
+Disallow: /cleanup_*.py
+Disallow: /process_*.py
+Disallow: /remove_*.py
+Disallow: /setup_*.py
+Disallow: /screenshot_*.py
+Disallow: /requirements.txt
+Disallow: /SCREENSHOT_README.md
+Disallow: /index_experimental.html
+Disallow: /locked/
+
+# Allow all images and assets
+Allow: /assets/
+Allow: /pages/
