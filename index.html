@@ -91,8 +91,9 @@
 
     <main id="main" class="splash" tabindex="-1" aria-label="Landing">
       <section class="hero">
-        <video class="hero__video" aria-hidden="true" autoplay muted loop playsinline preload="metadata">
+        <video class="hero__video" aria-hidden="true" autoplay muted loop playsinline preload="auto">
           <source src="assets/video/hero.mp4" type="video/mp4">
+          Your browser does not support the video tag.
         </video>
       </section>
       <img src="assets/landing_mirror_oval_no_bg_optimized.png" alt="" class="landing-mirror" aria-hidden="true">
@@ -124,7 +125,107 @@
         // Image is loaded and cached
       };
       
-      // Video will autoplay with HTML attributes - no JavaScript interference needed
+      // Ensure video loads and plays properly, especially after navigation
+      const heroVideo = document.querySelector('.hero__video');
+      if (heroVideo) {
+        // Detect mobile devices for different loading strategies
+        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        
+        // Try to play the video
+        const playVideo = async () => {
+          try {
+            await heroVideo.play();
+          } catch (error) {
+            // If autoplay fails, try again after a short delay
+            console.log('Autoplay failed, retrying...');
+            setTimeout(() => {
+              heroVideo.play().catch(() => {
+                console.log('Video autoplay blocked by browser');
+              });
+            }, 100);
+          }
+        };
+        
+        // Mobile-specific loading strategy
+        if (isMobile) {
+          // Mobile: delay loading slightly to improve performance
+          setTimeout(() => {
+            heroVideo.load();
+            playVideo();
+          }, 300);
+        } else {
+          // Desktop: load immediately
+          heroVideo.load();
+          playVideo();
+        }
+        
+        // Play when video is ready
+        heroVideo.addEventListener('canplay', playVideo);
+        
+        // Ensure video is visible
+        heroVideo.style.opacity = '1';
+        heroVideo.style.display = 'block';
+        
+        // Handle page visibility changes (when returning from other pages)
+        document.addEventListener('visibilitychange', () => {
+          if (!document.hidden && heroVideo) {
+            // Page became visible again, ensure video is playing
+            if (isMobile) {
+              // Mobile: slight delay to prevent aggressive reloading
+              setTimeout(() => {
+                heroVideo.load();
+                playVideo();
+              }, 100);
+            } else {
+              heroVideo.load();
+              playVideo();
+            }
+          }
+        });
+        
+        // Handle focus events (when tab becomes active again)
+        window.addEventListener('focus', () => {
+          if (heroVideo) {
+            if (isMobile) {
+              setTimeout(() => {
+                heroVideo.load();
+                playVideo();
+              }, 100);
+            } else {
+              heroVideo.load();
+              playVideo();
+            }
+          }
+        });
+        
+        // Handle orientation changes on mobile
+        if (isMobile) {
+          window.addEventListener('orientationchange', () => {
+            setTimeout(() => {
+              heroVideo.load();
+              playVideo();
+            }, 500);
+          });
+          
+          // iOS Safari specific handling
+          if (/iPhone|iPad|iPod/.test(navigator.userAgent)) {
+            // iOS Safari sometimes needs user interaction to play video
+            document.addEventListener('touchstart', () => {
+              if (heroVideo.paused) {
+                playVideo();
+              }
+            }, { once: true });
+            
+            // Handle iOS Safari page visibility issues
+            document.addEventListener('pageshow', () => {
+              setTimeout(() => {
+                heroVideo.load();
+                playVideo();
+              }, 200);
+            });
+          }
+        }
+      }
       
       // Measure title width and brand height to size/position About icon and grid
       const titleEl = document.querySelector('.ls-title');
