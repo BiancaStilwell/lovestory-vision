@@ -502,8 +502,6 @@ html, body {
     padding-right: 20px;
   }
 }
-
-@media (max-width: 768px) {
 .card { position: relative; border: 1px solid rgba(0,0,0,0.08); border-radius: var(--radius); overflow: hidden; background: #fafafa; }
 .card .ph { display: grid; place-items: center; aspect-ratio: 4/3; color: var(--muted); font-size: 14px; background: #f2f2f2; }
 .card figcaption { padding: 10px 12px; color: var(--muted); font-size: 14px; border-top: 1px solid rgba(0,0,0,0.06); }
@@ -622,7 +620,7 @@ html, body {
   .portfolio-layout {
     grid-template-columns: 1fr;
     gap: 24px;
-    padding-left: 20px;
+    padding-left: 0px !important;
   }
   
   .portfolio-title {
@@ -647,7 +645,7 @@ html, body {
   
   /* Contact page mobile padding */
   .contact-layout {
-    padding-left: 20px !important;
+    padding-left: 0px !important;
     padding-right: 20px !important;
     width: 100% !important;
     max-width: 100% !important;
@@ -656,17 +654,24 @@ html, body {
   
   /* About page mobile padding */
   .about-layout {
-    padding-left: 20px !important;
+    display: block !important;
+    padding-left: 0px !important;
     padding-right: 20px !important;
     width: 100% !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
+    margin-top: 8px !important;
+  }
+  
+  .about-content {
+    padding-left: 0px !important;
+    margin-left: 0px !important;
   }
   
   /* Press page mobile padding */
   .press-layout {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 0px !important;
+    padding-right: 20px !important;
   }
   
   .press-title {
@@ -745,18 +750,18 @@ html, body {
     backface-visibility: hidden !important;
   }
   
-      .ls-brand {
-      position: absolute !important;
-      top: 32vh !important;
-      left: 50% !important;
-      transform: translateX(-50%) !important;
-      z-index: 10 !important;
-      display: block !important;
-      text-align: center !important;
-      pointer-events: none !important;
-      width: 100% !important;
-      max-width: 90vw !important;
-    }
+  .ls-brand {
+    position: absolute !important;
+    top: 32vh !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    z-index: 10 !important;
+    display: block !important;
+    text-align: center !important;
+    pointer-events: none !important;
+    width: 100% !important;
+    max-width: 90vw !important;
+  }
   
   .ls-author {
     font-family: 'Ballet', cursive !important;
@@ -766,6 +771,44 @@ html, body {
     color: var(--text) !important;
     opacity: 0.95 !important;
     text-shadow: 0 2px 10px rgba(255,255,255,0.5), 0 6px 20px rgba(0,0,0,0.18), 0 0 20px rgba(255,255,255,0.8), 0 0 40px rgba(255,255,255,0.6), 0 0 60px rgba(255,255,255,0.4) !important;
+    margin-bottom: 8px !important;
+    font-optical-sizing: auto !important;
+    z-index: 10 !important;
+    position: static !important;
+    display: block !important;
+    width: 100% !important;
+  }
+  
+  .ls-tagline {
+    font-family: 'Ballet', cursive !important;
+    font-weight: 700 !important;
+    font-size: clamp(31.2px, 4.662vw, 53.5px) !important;
+    letter-spacing: 0.01em !important;
+    color: var(--text) !important;
+    opacity: 0.95 !important;
+    text-align: center !important;
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    z-index: auto !important;
+    padding: 0 .5rem !important;
+    margin-top: 0 !important;
+    text-shadow: 0 2px 8px rgba(255,255,255,0.4), 0 6px 16px rgba(0,0,0,0.12), 0 0 20px rgba(255,255,255,0.8), 0 0 40px rgba(255,255,255,0.6), 0 0 60px rgba(255,255,255,0.4) !important;
+    pointer-events: auto !important;
+    display: block !important;
+    width: 100% !important;
+  }
+  
+  
+  .ls-author {
+    font-family: 'Ballet', cursive !important;
+    font-weight: 400 !important;
+    letter-spacing: 0.01em !important;
+    font-size: clamp(27.1px, 3.855vw, 44.3px) !important;
+    color: var(--text) !important;
+    opacity: 0.95 !important;
+    text-shadow: 0 2px 10px rgba(255,255,255,0.5), 0 6px 20px rgba(0,0,0,0.18) !important;
     margin-bottom: 8px !important;
     font-optical-sizing: auto !important;
     z-index: 10 !important;
@@ -803,7 +846,7 @@ html, body {
     z-index: auto !important;
     padding: 0 .5rem !important;
     margin-top: 0 !important;
-    text-shadow: 0 2px 8px rgba(255,255,255,0.4), 0 6px 16px rgba(0,0,0,0.12), 0 0 20px rgba(255,255,255,0.8), 0 0 40px rgba(255,255,255,0.6), 0 0 60px rgba(255,255,255,0.4) !important;
+    text-shadow: 0 2px 8px rgba(255,255,255,0.4), 0 6px 16px rgba(0,0,0,0.12) !important;
     pointer-events: auto !important;
     display: block !important;
     width: 100% !important;
