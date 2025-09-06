@@ -16,7 +16,7 @@
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header" role="banner">
       <div class="wrap">
-        <a href="navigation.html" class="back-link">← Back to Navigation</a>
+        <a href="navigation.html" class="back-link" data-back>← Back to Navigation</a>
       </div>
     </header>
 
@@ -47,6 +47,17 @@
 
     <a class="home-fab" href="../"><span class="home-label">Home</span><img src="../assets/icons/home.png" alt="Home"></a>
     <script type="module">
+      // Smart back navigation - returns to List page instead of Home
+      const backBtn = document.querySelector('[data-back]');
+      backBtn?.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (window.history.length > 1) {
+          window.history.back();
+        } else {
+          window.location.href = 'navigation.html';
+        }
+      });
+      
       // Soft password gate
       const TEARSHEET_PASSWORD = 'romance'; // TODO:COPY tearsheet.password
       const btn = document.getElementById('ts-btn');

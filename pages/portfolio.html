@@ -96,6 +96,17 @@
     <!-- Footer removed per request -->
     <a class="home-fab" href="../"><span class="home-label">Home</span><img src="../assets/icons/home.png" alt="Home"></a>
     <script type="module">
+      // Smart back navigation - returns to List page instead of Home
+      const backBtn = document.querySelector('.back-link');
+      backBtn?.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (window.history.length > 1) {
+          window.history.back();
+        } else {
+          window.location.href = 'navigation.html';
+        }
+      });
+      
       const btn = document.querySelector('.menu-toggle');
       const menu = document.getElementById('site-menu');
       btn?.addEventListener('click', () => {
