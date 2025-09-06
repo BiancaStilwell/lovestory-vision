@@ -36,12 +36,12 @@ body.inner .site-header { display: block !important; }
 
 /* Add breathing room for floating Home button */
 body.inner .page {
-  padding-bottom: calc(var(--fab-size) + var(--fab-offset) + 24px);
+  padding-left: calc(var(--fab-size) + var(--fab-offset) + 24px);
 }
 
 @media (max-width: 360px) {
   body.inner .page {
-    padding-bottom: calc(var(--fab-size) + var(--fab-offset) + 20px);
+    padding-left: calc(var(--fab-size) + var(--fab-offset) + 20px);
   }
 }
 
@@ -888,7 +888,7 @@ a { color: #0645ad; }
 
 .home-fab { 
   position: fixed; 
-  right: max(var(--fab-offset), env(safe-area-inset-right)); 
+  left: max(var(--fab-offset), env(safe-area-inset-left)); 
   bottom: max(var(--fab-offset), env(safe-area-inset-bottom)); 
   z-index: 200; 
   display: inline-grid; 
@@ -899,12 +899,6 @@ a { color: #0645ad; }
   border: 0; 
   padding: 0; 
   gap: 2px;
-  width: var(--fab-size);
-  height: var(--fab-size);
-  border-radius: 50%;
-  backdrop-filter: blur(8px);
-  background: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
 .home-fab .home-label { 
