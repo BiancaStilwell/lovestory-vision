@@ -124,30 +124,7 @@
         // Image is loaded and cached
       };
       
-      // Optimize video loading
-      const video = document.querySelector('.hero__video');
-      if (video) {
-        // Set video loading priority
-        video.preload = 'metadata';
-        
-        // Show video immediately on desktop, delay on mobile
-        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-        
-        if (!isMobile) {
-          // Desktop: show video immediately
-          video.load();
-        } else {
-          // Mobile: delay loading but show poster image
-          setTimeout(() => {
-            video.load();
-          }, 500);
-        }
-        
-        // Video is already visible by default in CSS
-        video.addEventListener('canplay', () => {
-          // Video is ready to play
-        });
-      }
+      // Video will autoplay with HTML attributes - no JavaScript interference needed
       
       // Measure title width and brand height to size/position About icon and grid
       const titleEl = document.querySelector('.ls-title');
