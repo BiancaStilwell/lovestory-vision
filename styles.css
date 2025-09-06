@@ -34,6 +34,17 @@ body.inner {
 /* Show header on inner pages with persistent navigation */
 body.inner .site-header { display: block !important; }
 
+/* Add breathing room for floating Home button */
+body.inner .page {
+  padding-bottom: calc(var(--fab-size) + var(--fab-offset) + 24px);
+}
+
+@media (max-width: 360px) {
+  body.inner .page {
+    padding-bottom: calc(var(--fab-size) + var(--fab-offset) + 20px);
+  }
+}
+
 /* Tear sheet layout wrap */
 .ts-wrap { max-width: 520px; margin: 0 auto; }
 .ts-grid { display: grid; grid-template-columns: 1fr auto; column-gap: 10px; align-items: center; }
@@ -673,12 +684,7 @@ html, body {
     padding-right: 20px;
   }
   
-  /* Show home-fab on mobile */
-  .home-fab {
-    display: inline-grid !important;
-    left: 16px;
-    bottom: 16px;
-  }
+  /* Home-fab positioning handled by main .home-fab rule */
   
   /* Mobile landing page fixes */
   .splash {
@@ -875,10 +881,67 @@ a { color: #0645ad; }
 /* Removed - handled by site-wide focus styles */
 
 /* Home floating button on inner pages */
-.home-fab { position: fixed; left: 16px; bottom: 16px; z-index: 50; display: inline-grid; align-items: center; justify-items: start; text-decoration: none; background: transparent; border: 0; padding: 0; gap: 2px; }
-.home-fab .home-label { font-family: 'Ballet', cursive; font-weight: 600; font-size: clamp(15.7px, 2.13vw, 21.8px); letter-spacing: 0.01em; color: var(--text); text-shadow: 0 1px 6px rgba(255,255,255,0.4), 0 2px 8px rgba(0,0,0,0.12); margin-left: 10%; }
-.home-fab img { width: clamp(56px, 7.2vw, 92px); height: auto; display: block; filter: drop-shadow(0 6px 16px rgba(0,0,0,0.18)); }
+:root { 
+  --fab-size: 56px; 
+  --fab-offset: 16px;
+}
+
+.home-fab { 
+  position: fixed; 
+  right: max(var(--fab-offset), env(safe-area-inset-right)); 
+  bottom: max(var(--fab-offset), env(safe-area-inset-bottom)); 
+  z-index: 200; 
+  display: inline-grid; 
+  align-items: center; 
+  justify-items: center; 
+  text-decoration: none; 
+  background: transparent; 
+  border: 0; 
+  padding: 0; 
+  gap: 2px;
+  width: var(--fab-size);
+  height: var(--fab-size);
+  border-radius: 50%;
+  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.home-fab .home-label { 
+  font-family: 'Ballet', cursive; 
+  font-weight: 600; 
+  font-size: clamp(12px, 1.8vw, 16px); 
+  letter-spacing: 0.01em; 
+  color: var(--text); 
+  text-shadow: 0 1px 6px rgba(255,255,255,0.4), 0 2px 8px rgba(0,0,0,0.12); 
+  margin: 0;
+  text-align: center;
+}
+
+.home-fab img { 
+  width: clamp(32px, 4vw, 48px); 
+  height: auto; 
+  display: block; 
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.15)); 
+}
+
 .home-fab:hover img, .home-fab:focus img { transform: none; }
+
+/* Reduce size on very small viewports */
+@media (max-width: 360px) {
+  :root { 
+    --fab-size: 48px; 
+    --fab-offset: 12px;
+  }
+  
+  .home-fab .home-label { 
+    font-size: 11px; 
+  }
+  
+  .home-fab img { 
+    width: 28px; 
+  }
+}
 
 /* Right-side page icon on inner pages */
 .page-icon-right { position: fixed; right: 2vw; top: 28vh; width: clamp(120px, 18vw, 340px); height: auto; z-index: 2; pointer-events: none; filter: drop-shadow(0 10px 26px rgba(0,0,0,0.18)); opacity: 0.92; }
