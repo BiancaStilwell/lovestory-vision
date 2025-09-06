@@ -908,14 +908,7 @@ a { color: #0645ad; }
 }
 
 .home-fab .home-label { 
-  font-family: 'Ballet', cursive; 
-  font-weight: 600; 
-  font-size: clamp(12px, 1.8vw, 16px); 
-  letter-spacing: 0.01em; 
-  color: var(--text); 
-  text-shadow: 0 1px 6px rgba(255,255,255,0.4), 0 2px 8px rgba(0,0,0,0.12); 
-  margin: 0;
-  text-align: center;
+  display: none; /* Hide the text label */
 }
 
 .home-fab img { 
@@ -923,9 +916,10 @@ a { color: #0645ad; }
   height: auto; 
   display: block; 
   filter: drop-shadow(0 4px 12px rgba(0,0,0,0.15)); 
+  transform: scaleX(-1); /* Mirror horizontally to point left */
 }
 
-.home-fab:hover img, .home-fab:focus img { transform: none; }
+.home-fab:hover img, .home-fab:focus img { transform: scaleX(-1); }
 
 /* Reduce size on very small viewports */
 @media (max-width: 360px) {
@@ -935,7 +929,7 @@ a { color: #0645ad; }
   }
   
   .home-fab .home-label { 
-    font-size: 11px; 
+    display: none; /* Hide text on small screens too */
   }
   
   .home-fab img { 
