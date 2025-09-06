@@ -10,42 +10,28 @@
     <link href="https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
     <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../styles.css?v=13">
   </head>
   <body class="inner">
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header" role="banner">
       <div class="wrap">
-        <button class="menu-toggle" aria-expanded="false" aria-controls="site-menu" aria-label="Menu">☰</button>
-        <nav aria-label="Main" class="main-nav" id="site-menu" hidden>
-          <ul>
-            <li><a href="../">Home</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="about.html" aria-current="page">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="press.html">Press</a></li>
-            <li><a href="contact.html#tearsheet">Tearsheet</a></li>
-          </ul>
-        </nav>
+        <a href="navigation.html" class="back-link">← Back to Navigation</a>
       </div>
     </header>
 
     <main id="main" class="page wrap">
-      <h1>About</h1>
-      <img src="../assets/img/symbols/about.png" alt="" class="page-icon-right about-drape" aria-hidden="true">
-      <!-- TODO:COPY about.bio (page intentionally left blank per request) -->
+      <div class="about-layout">
+        <h1 class="about-title">About</h1>
+        <div class="about-content">
+          <p>Bianca Stilwell is an artist whose practice bridges historical technique and contemporary reflection. Trained in Argentina and the United Kingdom, she works with noble forms of leather, drawing on medieval and Renaissance methods such as cuir bouilli and old-world surface treatments. Though grounded in classical training and a deep knowledge of leather craft, she chooses to remain at the fringe of what is considered proper, using her materials to question boundaries as much as preserve tradition. Her mirror works engage with the tradition of vanitas, contemplating the existential emptiness of all things and the surface obsessions that seek to conceal it, while interrogating how selfhood has shifted from communal identity to 21st-century individualism.<br><br>
+Her process embraces imperfection, relying equally on skill and on the tannage of each hide. Each work emerges through a negotiation between maker and material, a give-and-take that foregrounds leather's history and its resistance to total control.<br><br>
+Stilwell's background in design and production, which spans fashion, music, interiors, and pop culture, continues to shape her perspective, particularly her attraction to theatricality and the performative aspects of material. Alongside her leather practice she has cultivated a career sourcing rare, handmade, and archival interior objects, reflecting a commitment to the resonance of materials with layered histories. Dividing her time between the Mojave Desert in California and Buenos Aires in Argentina, she is re-dedicating herself to her leather practice in the place where her exploration of the material first began.</p>
+        </div>
+      </div>
     </main>
 
     <!-- Footer removed per request -->
     <a class="home-fab" href="../"><span class="home-label">Home</span><img src="../assets/icons/home.png" alt="Home"></a>
-    <script type="module">
-      const btn = document.querySelector('.menu-toggle');
-      const menu = document.getElementById('site-menu');
-      btn?.addEventListener('click', () => {
-        const open = btn.getAttribute('aria-expanded') === 'true';
-        btn.setAttribute('aria-expanded', String(!open));
-        if (open) menu.setAttribute('hidden', ''); else menu.removeAttribute('hidden');
-      });
-    </script>
   </body>
   </html>

@@ -4,47 +4,36 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Press — Bianca</title>
-    <meta name="description" content="Press and features for Bianca’s work.">
+    <meta name="description" content="Press and features for Bianca's work.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
     <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../styles.css?v=2">
   </head>
   <body class="inner">
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header" role="banner">
       <div class="wrap">
-        <button class="menu-toggle" aria-expanded="false" aria-controls="site-menu" aria-label="Menu">☰</button>
-        <nav aria-label="Main" class="main-nav" id="site-menu" hidden>
-          <ul>
-            <li><a href="../">Home</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="press.html" aria-current="page">Press</a></li>
-            <li><a href="contact.html#tearsheet">Tearsheet</a></li>
-          </ul>
-        </nav>
+        <a href="navigation.html" class="back-link">← Back to Navigation</a>
       </div>
     </header>
 
     <main id="main" class="page wrap">
-      <h1>Press</h1>
-      <p class="muted"><!-- TODO:COPY press.intro -->Selected articles, features, and interviews. Send links or PDFs; I’ll add them here.</p>
-      <img src="../assets/img/symbols/press.png" alt="" class="page-icon-right high" aria-hidden="true">
+      <div class="press-layout">
+        <h1 class="press-title">Press</h1>
+        <div class="press-grid">
+          <div class="press-item">
+            <img src="../assets/press-002.jpg" alt="Press coverage" class="press-pdf">
+          </div>
+          <div class="press-item">
+            <img src="../assets/press-001.jpg" alt="Press coverage" class="press-pdf">
+          </div>
+        </div>
+      </div>
     </main>
 
     <a class="home-fab" href="../"><span class="home-label">Home</span><img src="../assets/icons/home.png" alt="Home"></a>
-    <script type="module">
-      const btn = document.querySelector('.menu-toggle');
-      const menu = document.getElementById('site-menu');
-      btn?.addEventListener('click', () => {
-        const open = btn.getAttribute('aria-expanded') === 'true';
-        btn.setAttribute('aria-expanded', String(!open));
-        if (open) menu.setAttribute('hidden', ''); else menu.removeAttribute('hidden');
-      });
-    </script>
   </body>
   </html>

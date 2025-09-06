@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Navigation — Bianca Stilwell</title>
+    <meta name="description" content="Navigate to different sections of Bianca Stilwell's portfolio">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
+    <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../styles.css?v=2">
+    <style>
+      body {
+        background: white;
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--font-display);
+      }
+      
+      .nav-container {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        align-items: center;
+      }
+      
+      .nav-button {
+        font-family: 'Cinzel', Georgia, serif;
+        font-weight: 800;
+        font-style: italic;
+        font-size: clamp(28px, 4vw, 42px);
+        letter-spacing: 0.02em;
+        color: #711113;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        text-align: center;
+        min-width: 200px;
+      }
+      
+      .nav-button:hover,
+      .nav-button:focus {
+        color: #711113;
+        transform: none;
+        text-shadow: none;
+      }
+      
+      .back-link {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        display: inline-grid;
+        align-items: center;
+        justify-items: center;
+        text-decoration: none;
+        background: transparent;
+        border: 0;
+        padding: 0;
+        gap: 2px;
+        z-index: 50;
+      }
+      
+      .back-link .back-label {
+        font-family: 'Ballet', cursive;
+        font-weight: 600;
+        font-size: clamp(15.7px, 2.13vw, 21.8px);
+        letter-spacing: 0.01em;
+        color: #333;
+        text-shadow: 0 1px 6px rgba(255,255,255,0.4), 0 2px 8px rgba(0,0,0,0.12);
+        margin-left: 10%;
+        text-align: center;
+      }
+      
+      .back-link img {
+        width: clamp(56px, 7.2vw, 92px);
+        height: auto;
+        display: block;
+        filter: drop-shadow(0 6px 16px rgba(0,0,0,0.18));
+        transform: scaleX(-1);
+      }
+      
+      .back-link:hover,
+      .back-link:focus {
+        background: transparent;
+      }
+      
+      .back-link:hover img,
+      .back-link:focus img {
+        transform: scaleX(-1);
+      }
+    </style>
+  </head>
+  <body>
+    <a href="../index.html" class="back-link">
+      <span class="back-label">Back</span>
+      <img src="../assets/icons/home.png" alt="Back">
+    </a>
+    
+    <div class="nav-container">
+      <a href="portfolio.html" class="nav-button">Portfolio</a>
+      <a href="contact.html" class="nav-button">Contact</a>
+      <a href="about.html" class="nav-button">About</a>
+      <a href="press.html" class="nav-button">Press</a>
+      <a href="tearsheet.html" class="nav-button">Tearsheet</a>
+    </div>
+  </body>
+</html>

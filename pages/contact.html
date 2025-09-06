@@ -10,56 +10,39 @@
     <link href="https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
     <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../styles.css?v=15">
   </head>
   <body class="inner">
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header" role="banner">
       <div class="wrap">
-        <button class="menu-toggle" aria-expanded="false" aria-controls="site-menu" aria-label="Menu">☰</button>
-        <nav aria-label="Main" class="main-nav" id="site-menu" hidden>
-          <ul>
-            <li><a href="../">Home</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html" aria-current="page">Contact</a></li>
-            <li><a href="press.html">Press</a></li>
-            <li><a href="tearsheet.html">Tearsheet</a></li>
-          </ul>
-        </nav>
+        <a href="navigation.html" class="back-link">← Back to Navigation</a>
       </div>
     </header>
 
     <main id="main" class="page wrap">
-      <h1>Contact</h1>
-      <address style="font-style: normal; line-height: 1.5; white-space: pre-line;">
-        buenos aires studio
-        galería de las americas
-        suipacha 925
-        local 18
-        ciudad de buenos aires
-        argentina
-        <a href="mailto:biancastilwellworld@gmail.com">by appointment only</a>
-      </address>
-      <p style="margin-top: 16px;">For Southern California appointments, please get in touch <a href="mailto:biancastilwellworld@gmail.com">here</a>.</p>
-      <p><a href="https://instagram.com/lovestorylovestorylovestory" target="_blank" rel="noopener">Instagram</a></p>
-      <p><a href="https://wa.me/19175848531" target="_blank" rel="noopener">WhatsApp</a></p>
-      <img src="../assets/img/symbols/contact.png" alt="" class="page-icon-right high" aria-hidden="true">
+      <div class="contact-layout">
+        <h1 class="contact-title">Contact</h1>
+        <div class="contact-content">
+          <p style="margin-bottom: 24px; font-size: 16px; line-height: 1.5;">For more information, collaborations and special projects, here is how you get in touch:</p>
+          <address style="font-style: normal; line-height: 1.5; white-space: pre-line;">
+            buenos aires studio
+            galería de las americas
+            suipacha 925
+            local 18
+            ciudad de buenos aires
+            argentina
+            <a href="mailto:biancastilwellworld@gmail.com">by appointment only</a>
+          </address>
+          <p style="margin-top: 24px;">For Southern California appointments, please get in touch <a href="mailto:biancastilwellworld@gmail.com">here</a>.</p>
+          <p><a href="https://instagram.com/lovestorylovestorylovestory" target="_blank" rel="noopener">Instagram</a></p>
+          <p><a href="https://wa.me/19175848531" target="_blank" rel="noopener">WhatsApp</a></p>
+          <p style="margin-top: 24px;">thank you</p>
+        </div>
+      </div>
     </main>
 
     <!-- Footer removed per request -->
     <a class="home-fab" href="../"><span class="home-label">Home</span><img src="../assets/icons/home.png" alt="Home"></a>
-    <script type="module">
-      // Menu toggle
-      const mbtn = document.querySelector('.menu-toggle');
-      const menu = document.getElementById('site-menu');
-      mbtn?.addEventListener('click', () => {
-        const open = mbtn.getAttribute('aria-expanded') === 'true';
-        mbtn.setAttribute('aria-expanded', String(!open));
-        if (open) menu.setAttribute('hidden', ''); else menu.removeAttribute('hidden');
-      });
-      
-      // No tearsheet logic here anymore; see tearsheet.html
-    </script>
   </body>
   </html>

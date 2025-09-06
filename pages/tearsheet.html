@@ -3,67 +3,50 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Tear Sheet — Bianca</title>
-    <meta name="description" content="Download Bianca’s tear sheet (password protected).">
+    <title>Tearsheet — Bianca</title>
+    <meta name="description" content="Download Bianca's tearsheet (password protected).">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
     <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../styles.css?v=4">
   </head>
   <body class="inner">
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header" role="banner">
       <div class="wrap">
-        <button class="menu-toggle" aria-expanded="false" aria-controls="site-menu" aria-label="Menu">☰</button>
-        <nav aria-label="Main" class="main-nav" id="site-menu" hidden>
-          <ul>
-            <li><a href="../">Home</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="press.html">Press</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </nav>
+        <a href="navigation.html" class="back-link">← Back to Navigation</a>
       </div>
     </header>
 
-    <main id="main" class="page" style="display:grid; place-items:center; min-height: 72vh; position: relative;">
+    <main id="main" class="page tearsheet-layout" style="display:grid; place-items:center; min-height: 72vh; position: relative;">
       <section aria-labelledby="tearsheet-title">
         <div class="ts-wrap" style="--icon-w: 76px;">
-          <div class="ts-head">
-            <h1 id="tearsheet-title">Download Tear Sheet</h1>
-            <p>Enter the password to unlock the download.</p>
+          <div class="ts-grid">
+            <div class="ts-head">
+              <h1 id="tearsheet-title">Download Tearsheet</h1>
+              <p>Enter the password to unlock the download.</p>
+            </div>
+            <label for="ts-pass" class="visually-hidden">Password</label>
+            <input class="ts-input" type="password" id="ts-pass" name="ts-pass" placeholder="Password" autocomplete="off" required style="padding: 10px; border: 1px solid rgba(0,0,0,0.2); border-radius: 6px;">
+            <button id="ts-btn" type="button" class="icon-btn ts-button" aria-label="Unlock">
+              <img src="../assets/icons/unlock.png" alt="" style="display:block; width: 76px; height: auto;">
+            </button>
+            <p style="margin-top: 8px; font-size: 14px; line-height: 1.4; text-align: center; grid-column: 1;">If you need a password, click <a href="mailto:biancastilwellworld@gmail.com">here</a> or <a href="https://wa.me/19175848531" target="_blank" rel="noopener">here</a> to request one.</p>
+            <p id="ts-msg" class="muted" role="status" aria-live="polite"></p>
+            <p id="ts-link-wrap" hidden>
+              <a id="ts-link" href="../assets/docs/tearsheet.pdf" download>Download tearsheet (PDF)</a>
+            </p>
           </div>
-          <form id="ts-form" onsubmit="return false" style="display: grid; grid-template-columns: 1fr auto; gap: 10px; align-items: center;">
-          <label for="ts-pass" class="visually-hidden">Password</label>
-          <input type="password" id="ts-pass" name="ts-pass" placeholder="Password" autocomplete="off" required style="padding: 10px; border: 1px solid rgba(0,0,0,0.2); border-radius: 6px;">
-          <button id="ts-btn" type="button" class="icon-btn" aria-label="Unlock">
-            <img src="../assets/icons/unlock.png" alt="" style="display:block; width: 76px; height: auto;">
-          </button>
-          <p id="ts-msg" class="muted" role="status" aria-live="polite" style="grid-column: 1 / -1; margin: 0;"></p>
-          <p id="ts-link-wrap" hidden style="grid-column: 1 / -1; margin: 0;">
-            <a id="ts-link" href="../assets/docs/tearsheet.pdf" download>Download tear sheet (PDF)</a>
-          </p>
-          </form>
         <!-- TODO:COPY tearsheet.password -->
         </div>
       </section>
     </main>
 
-    <img src="../assets/img/symbols/tearsheet.png" alt="" class="page-icon-right high smaller" aria-hidden="true">
+
     <a class="home-fab" href="../"><span class="home-label">Home</span><img src="../assets/icons/home.png" alt="Home"></a>
     <script type="module">
-      // Menu toggle
-      const mbtn = document.querySelector('.menu-toggle');
-      const menu = document.getElementById('site-menu');
-      mbtn?.addEventListener('click', () => {
-        const open = mbtn.getAttribute('aria-expanded') === 'true';
-        mbtn.setAttribute('aria-expanded', String(!open));
-        if (open) menu.setAttribute('hidden', ''); else menu.removeAttribute('hidden');
-      });
-
       // Soft password gate
       const TEARSHEET_PASSWORD = 'romance'; // TODO:COPY tearsheet.password
       const btn = document.getElementById('ts-btn');

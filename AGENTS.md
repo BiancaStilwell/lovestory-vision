@@ -8,7 +8,7 @@
 * **Agent does the work**: assume Bianca does not know Git, GitHub, or servers. The agent runs all commands (init, commits, pushes, starting/stopping local preview) and reports results in plain English.
 * **Minimal questions**: implement what she asks; if underspecified, either choose the simplest sensible default or ask one brief clarifier (especially for style).
 * **Bianca overrides**: her explicit instructions trump this file; only push back if something is technically unsound—explain briefly and propose a simpler alternative.
-* **Local Server**: Always take the most straightforward approach when asked for a live preview, just a simple port for localhost:5173 using "python3 serve.py 5173". Then display the IP address in chat so I can access the site from my phone on the same wifi.
+* **Local Server**: Bianca controls the local server herself via the live server plugin in VSCode, so do not worry about starting any local development server.
 
 ---
 
@@ -124,19 +124,7 @@ Bianca does **not** use Git directly; you do.
 
 **Regular workflow**
 
-* Commit in small steps with clear, friendly messages (e.g., `feat: add projects grid + lightbox`).
-* Include a brief **PLACEHOLDER summary** when applicable, e.g., `PLACEHOLDER: hero.tagline, about.bio`.
-* Prefer working directly on `main`. If a branch is needed, name it clearly and merge without noise.
-* If something breaks, revert the last commit and explain in one sentence.
-
----
-
-## Local Preview (agent‑run, live reload)
-
-* The agent spins up a **local dev server with live reload** so Bianca can see changes instantly in her browser.
-* Bianca does **not** manage ports or commands. The agent selects an available localhost port (prefer `5173`; auto‑fallback if busy) and **opens the browser automatically**.
-* Acceptable implementations: a tiny static server with live reload (Python `livereload`, `http.server` + lightweight reload script, or equivalent). Avoid heavy tooling.
-* If the server stops (sleep/restart), the agent restarts it and reopens the page. No action needed from Bianca.
+* Only add and commit changes when Bianca explicitly asks you to. She might use verbiage such as "save changes", "commit changes", etc. She will speak colloquially and not necessarily say "git add and commit".
 
 ---
 

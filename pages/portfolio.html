@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
     <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../styles.css?v=2">
   </head>
   <body class="inner">
     <a class="skip-link" href="#main">Skip to content</a>
@@ -31,9 +31,56 @@
     </header>
 
     <main id="main" class="page wrap">
-      <h1>Portfolio</h1>
-      <!-- Temporary: categories removed per request. We’ll lay in photos directly here. -->
-      <img src="../assets/img/symbols/portfolio.png" alt="" class="page-icon-right higher up35" aria-hidden="true">
+      <div class="portfolio-layout">
+        <h1 class="portfolio-title">Portfolio</h1>
+        <div class="portfolio-grid">
+          <img src="../assets/portfolio/015.jpg" alt="Portfolio image" class="portfolio-item">
+          <img src="../assets/portfolio/034.JPG" alt="Portfolio image" class="portfolio-item">
+          <img src="../assets/portfolio/008.jpg" alt="Portfolio image" class="portfolio-item">
+          <img src="../assets/portfolio/025.JPG" alt="Portfolio image" class="portfolio-item">
+          <img src="../assets/portfolio/035.JPG" alt="Portfolio image" class="portfolio-item">
+          <img src="../assets/portfolio/003.JPG" alt="Portfolio image" class="portfolio-item">
+          <img src="../assets/portfolio/032.jpeg" alt="Portfolio image" class="portfolio-item">
+          <img src="../assets/portfolio/019.JPG" alt="Portfolio image" class="portfolio-item">
+          <img src="../assets/portfolio/036.JPG" alt="Portfolio image" class="portfolio-item">
+          <img src="../assets/portfolio/011.jpg" alt="Portfolio image" class="portfolio-item">
+          <img src="../assets/portfolio/026.jpeg" alt="Portfolio image" class="portfolio-item">
+          <img src="../assets/portfolio/006.JPG" alt="Portfolio image" class="portfolio-item">
+          <img src="../assets/portfolio/037.JPG" alt="Portfolio image" class="portfolio-item">
+          <img src="../assets/portfolio/014.jpg" alt="Portfolio image" class="portfolio-item">
+          <img src="../assets/portfolio/030.jpeg" alt="Portfolio image" class="portfolio-item">
+          <img src="../assets/portfolio/001.JPG" alt="Portfolio image" class="portfolio-item">
+          <img src="../assets/portfolio/038.jpeg" alt="Portfolio image" class="portfolio-item">
+          <img src="../assets/portfolio/017.jpg" alt="Portfolio image" class="portfolio-item">
+          <img src="../assets/portfolio/028.jpg" alt="Portfolio image" class="portfolio-item">
+          <img src="../assets/portfolio/023.JPG" alt="Portfolio image" class="portfolio-item">
+          <img src="../assets/portfolio/009.jpg" alt="Portfolio image" class="portfolio-item">
+          <img src="../assets/portfolio/033.jpeg" alt="Portfolio image" class="portfolio-item">
+          <img src="../assets/portfolio/005.JPG" alt="Portfolio image" class="portfolio-item">
+          <img src="../assets/portfolio/020.JPG" alt="Portfolio image" class="portfolio-item">
+          <img src="../assets/portfolio/012.jpg" alt="Portfolio image" class="portfolio-item">
+          <img src="../assets/portfolio/027.JPG" alt="Portfolio image" class="portfolio-item">
+          <img src="../assets/portfolio/004.JPG" alt="Portfolio image" class="portfolio-item">
+          <img src="../assets/portfolio/016.jpg" alt="Portfolio image" class="portfolio-item">
+          <img src="../assets/portfolio/031.jpeg" alt="Portfolio image" class="portfolio-item">
+          <img src="../assets/portfolio/022.JPG" alt="Portfolio image" class="portfolio-item">
+          <img src="../assets/portfolio/007.jpg" alt="Portfolio image" class="portfolio-item">
+          <img src="../assets/portfolio/013.jpg" alt="Portfolio image" class="portfolio-item">
+          <div class="video-container">
+            <video src="../assets/portfolio/029.MOV" alt="Portfolio video" class="portfolio-item" muted>
+              <source src="../assets/portfolio/029.MOV" type="video/quicktime">
+              Your browser does not support the video tag.
+            </video>
+            <div class="play-button">▶</div>
+          </div>
+          <img src="../assets/portfolio/002.JPG" alt="Portfolio image" class="portfolio-item">
+          <img src="../assets/portfolio/018.JPG" alt="Portfolio image" class="portfolio-item">
+          <img src="../assets/portfolio/010.jpg" alt="Portfolio image" class="portfolio-item">
+          <img src="../assets/portfolio/024.JPG" alt="Portfolio image" class="portfolio-item">
+          <img src="../assets/portfolio/039.JPG" alt="Portfolio image" class="portfolio-item">
+          <img src="../assets/portfolio/040.jpeg" alt="Portfolio image" class="portfolio-item">
+        </div>
+      </div>
     </main>
 
     <!-- Footer removed per request -->
@@ -46,6 +93,25 @@
         btn.setAttribute('aria-expanded', String(!open));
         if (open) menu.setAttribute('hidden', ''); else menu.removeAttribute('hidden');
       });
+
+      // Video play button functionality
+      const video = document.querySelector('.video-container video');
+      const playButton = document.querySelector('.play-button');
+      
+      if (video && playButton) {
+        playButton.addEventListener('click', () => {
+          video.play();
+          playButton.style.display = 'none';
+        });
+        
+        video.addEventListener('pause', () => {
+          playButton.style.display = 'block';
+        });
+        
+        video.addEventListener('ended', () => {
+          playButton.style.display = 'block';
+        });
+      }
     </script>
   </body>
   </html>

@@ -14,7 +14,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
     <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=16">
+    <link rel="preload" href="assets/landing_mirror_oval_no_bg_optimized.png" as="image">
+    <link rel="preload" href="assets/video/hero.mp4" as="video" type="video/mp4">
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -22,7 +24,8 @@
     <!-- Removed brand header per request -->
 
     <main id="main" class="splash" tabindex="-1" aria-label="Landing">
-      <video class="bg-video" aria-hidden="true" autoplay muted loop playsinline preload="auto">
+      <img src="assets/landing_mirror_oval_no_bg_optimized.png" alt="" class="landing-mirror" aria-hidden="true">
+      <video class="bg-video" aria-hidden="true" autoplay muted loop playsinline preload="metadata">
         <source src="assets/video/hero.mp4" type="video/mp4">
       </video>
       <div class="ls-brand" aria-label="Brand">
@@ -33,63 +36,51 @@
 
       <h1 class="visually-hidden"><!-- TODO:COPY hero.tagline -->medieval methods of modern self‑reflection</h1>
 
-      <!-- Chaotic marginalia: doodles morph to glowing letters on hover -->
-      <nav class="marginalia-grid" aria-label="Primary">
-        <a class="m-link" href="pages/about.html" style="--dur:7s;--delay:-1s;--hue:40deg;" data-letter="A" data-word="About">
-          <span class="doodle" aria-hidden="true">
-            <!-- Using Bianca-provided image directly; no generated icon -->
-            <img src="assets/img/symbols/about.png" class="nav-icon" alt="About">
-          </span>
-          <span class="word" aria-hidden="true">About</span>
-          <span class="visually-hidden">About</span>
-        </a>
-
-        <a class="m-link" href="pages/portfolio.html" style="--dur:6.6s;--delay:-2s;--hue:310deg;" data-letter="P" data-word="Portfolio">
-          <span class="doodle" aria-hidden="true">
-            <!-- Using Bianca-provided cracked oval image directly -->
-            <img src="assets/img/symbols/portfolio.png" class="nav-icon" alt="Portfolio">
-          </span>
-          <span class="word" aria-hidden="true">Portfolio</span>
-          <span class="visually-hidden">Portfolio</span>
-        </a>
-
-        <a class="m-link" href="pages/contact.html" style="--dur:7.4s;--delay:-3s;--hue:120deg;" data-letter="C" data-word="Contact">
-          <span class="doodle" aria-hidden="true">
-            <!-- Using Bianca-provided tall drape image directly; no generated icon -->
-            <img src="assets/img/symbols/contact.png" class="nav-icon" alt="Contact">
-          </span>
-          <span class="word" aria-hidden="true">Contact</span>
-          <span class="visually-hidden">Contact</span>
-        </a>
-
-        <a class="m-link" href="pages/tearsheet.html" style="--dur:6.8s;--delay:-1.6s;--hue:260deg;" data-letter="T" data-word="Tear Sheet">
-          <span class="doodle" aria-hidden="true">
-            <!-- Using Bianca-provided short drape image directly -->
-            <img src="assets/img/symbols/tearsheet.png" class="nav-icon" alt="Tear Sheet">
-          </span>
-          <span class="word" aria-hidden="true">Tear Sheet</span>
-          <span class="visually-hidden">Tear Sheet</span>
-        </a>
-
-        <!-- New: Press page link -->
-        <a class="m-link" href="pages/press.html" style="--dur:6.2s;--delay:-1.2s;--hue:200deg;" data-letter="R" data-word="Press">
-          <span class="doodle" aria-hidden="true">
-            <!-- Using Bianca-provided long drape image directly -->
-            <img src="assets/img/symbols/press.png" class="nav-icon" alt="Press">
-          </span>
-          <span class="word" aria-hidden="true">Press</span>
-          <span class="visually-hidden">Press</span>
-        </a>
-      </nav>
+      <a href="pages/navigation.html" class="enter-button">Enter</a>
+      <a href="pages/navigation.html" class="enter-glove">
+        <img src="assets/icons/home.png" alt="Enter">
+      </a>
     </main>
 
     <!-- Footer copyright removed per request -->
 
       <!-- Explosive overlay removed per request -->
 
-    <div aria-hidden="true" style="position:fixed; bottom:10px; left:12px; z-index:9999; color:#111; font-size:14px; font-family: var(--font-display);">test</div>
+
 
     <script type="module">
+      // Preload and cache the mirror image
+      const mirrorImg = new Image();
+      mirrorImg.src = 'assets/landing_mirror_oval_no_bg_optimized.png';
+      mirrorImg.onload = () => {
+        // Image is loaded and cached
+      };
+      
+      // Optimize video loading
+      const video = document.querySelector('.bg-video');
+      if (video) {
+        // Set video loading priority
+        video.preload = 'metadata';
+        
+        // Show video immediately on desktop, delay on mobile
+        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        
+        if (!isMobile) {
+          // Desktop: show video immediately
+          video.load();
+        } else {
+          // Mobile: delay loading but show poster image
+          setTimeout(() => {
+            video.load();
+          }, 500);
+        }
+        
+        // Video is already visible by default in CSS
+        video.addEventListener('canplay', () => {
+          // Video is ready to play
+        });
+      }
+      
       // Measure title width and brand height to size/position About icon and grid
       const titleEl = document.querySelector('.ls-title');
       const brandEl = document.querySelector('.ls-brand');
