@@ -355,7 +355,7 @@ html, body {
 
 /* Title stack adjustments */
 /* remove older size override; size now set above */
-.hero, .hero-inner, .hero-title, .hero-sub, .hero-actions, .hero-graphic { display: none; }
+.hero-inner, .hero-title, .hero-sub, .hero-actions, .hero-graphic { display: none; }
 
 .hero-graphic {
   position: absolute; inset: 0; pointer-events: none;
