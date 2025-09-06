@@ -76,8 +76,48 @@ input, button, select, textarea { font: inherit; }
 
 /* Splash landing (inspired by circular buttons on reference) */
 .splash-header { display: none; }
-.splash { position: relative; min-height: 100vh; overflow: hidden; background: var(--bg); cursor: auto; }
-.splash .bg-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% var(--video-pos-y); z-index: 0; filter: brightness(0.95) contrast(1.05) saturate(1.05); opacity: 1; transition: opacity 0.3s ease-in-out; }
+.splash { position: relative; min-height: 100svh; overflow: hidden; background: var(--bg); cursor: auto; }
+
+/* Hero video container - fills viewport on all devices */
+.hero {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 100svh; /* safe viewport height for mobile */
+  overflow: hidden;
+  z-index: 0;
+}
+
+.hero__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* fill without distortion */
+  object-position: center;
+  display: block;
+  filter: brightness(0.95) contrast(1.05) saturate(1.05);
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* iOS Safari sometimes needs the container to be positioned */
+@supports (-webkit-touch-callout: none) {
+  .hero { position: relative; }
+}
+
+/* Prevent scrollbars and ensure proper viewport behavior */
+html, body {
+  overflow-x: hidden; /* Prevent horizontal scrollbars */
+  margin: 0;
+  padding: 0;
+}
+
+/* Ensure video container never causes overflow */
+.hero, .hero__video {
+  max-width: 100vw;
+  max-height: 100vh;
+}
 .splash .bg-mask { position: absolute; inset: 0; z-index: 1; pointer-events: none; background:
   radial-gradient(30vw 22vw at 50% 40%, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.35) 45%, rgba(0,0,0,0.10) 62%, rgba(0,0,0,0.0) 75%),
   radial-gradient(90vw 70vw at 50% 30%, rgba(0,0,0,0.12), transparent 70%);
@@ -626,6 +666,24 @@ input, button, select, textarea { font: inherit; }
   .splash {
     position: relative !important;
     overflow: hidden !important;
+    min-height: 100svh !important; /* Ensure safe viewport height on mobile */
+  }
+  
+  /* Hero video mobile optimization */
+  .hero {
+    min-height: 100svh !important; /* Safe viewport height for mobile */
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+  
+  .hero__video {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
   }
   
   /* Make Enter button bolder on mobile */
