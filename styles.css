@@ -31,8 +31,8 @@ body {
 body.inner { 
   background: #ffffff;
 }
-/* Remove header/nav bar on inner pages per request */
-body.inner .site-header { display: none !important; }
+/* Show header on inner pages with persistent navigation */
+body.inner .site-header { display: block !important; }
 
 /* Tear sheet layout wrap */
 .ts-wrap { max-width: 520px; margin: 0 auto; }
@@ -54,9 +54,17 @@ input, button, select, textarea { font: inherit; }
 }
 .skip-link:focus { left: 12px; top: 12px; }
 
-.site-header { position: sticky; top: 0; backdrop-filter: blur(6px); background: color-mix(in oklab, var(--bg) 90%, transparent); border-bottom: 1px solid rgba(0,0,0,0.06); }
+.site-header { position: sticky; top: 0; backdrop-filter: blur(6px); background: color-mix(in oklab, var(--bg) 90%, transparent); border-bottom: 1px solid rgba(0,0,0,0.06); z-index: 100; }
 .site-header .wrap { display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; }
-.brand { display: none; }
+.brand { 
+  font-family: 'Ballet', cursive; 
+  font-weight: 600; 
+  font-size: clamp(18px, 2.5vw, 24px); 
+  color: var(--text); 
+  text-decoration: none; 
+  letter-spacing: 0.01em;
+}
+.brand:hover { color: #711113; }
 /* Hamburger menu */
 .menu-toggle { appearance: none; background: #ffffff; color: #111; border: 1px solid rgba(0,0,0,0.2); border-radius: 6px; padding: 8px 10px; font-size: 18px; line-height: 1; cursor: pointer; }
 /* Removed - handled by site-wide focus styles */
@@ -71,8 +79,17 @@ input, button, select, textarea { font: inherit; }
 }
 
 .main-nav ul { display: flex; gap: 18px; list-style: none; margin: 0; padding: 0; }
-.main-nav a { color: var(--text); text-decoration: none; padding: 6px 8px; border-radius: 6px; }
-.main-nav a:hover { background: rgba(255,255,255,0.06); }
+.main-nav a { 
+  color: var(--text); 
+  text-decoration: none; 
+  padding: 6px 8px; 
+  border-radius: 6px; 
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+.main-nav a:hover { background: rgba(255,255,255,0.06); color: #711113; }
+.main-nav a[aria-current="page"] { color: #711113; font-weight: 600; }
 
 
 /* Splash landing (inspired by circular buttons on reference) */

@@ -26,7 +26,18 @@
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header" role="banner">
       <div class="wrap">
-        <a href="navigation.html" class="back-link" data-back>← Back to Navigation</a>
+        <a href="../" class="brand">Bianca Stilwell</a>
+        <button class="menu-toggle" aria-expanded="false" aria-controls="site-menu" aria-label="Menu">☰</button>
+        <nav aria-label="Main" class="main-nav" id="site-menu" hidden>
+          <ul>
+            <li><a href="../">Home</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="about.html" aria-current="page">About</a></li>
+            <li><a href="press.html">Press</a></li>
+            <li><a href="tearsheet.html">Tearsheet</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
       </div>
     </header>
 
@@ -45,15 +56,13 @@ Stilwell's background in design and production, which spans fashion, music, inte
     <a class="home-fab" href="../"><span class="home-label">Home</span><img src="../assets/icons/home.png" alt="Home"></a>
     
     <script type="module">
-      // Smart back navigation - returns to List page instead of Home
-      const backBtn = document.querySelector('[data-back]');
-      backBtn?.addEventListener('click', (e) => {
-        e.preventDefault();
-        if (window.history.length > 1) {
-          window.history.back();
-        } else {
-          window.location.href = 'navigation.html';
-        }
+      // Menu toggle functionality
+      const btn = document.querySelector('.menu-toggle');
+      const menu = document.getElementById('site-menu');
+      btn?.addEventListener('click', () => {
+        const open = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!open));
+        if (open) menu.setAttribute('hidden', ''); else menu.removeAttribute('hidden');
       });
     </script>
   </body>

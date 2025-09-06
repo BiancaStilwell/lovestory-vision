@@ -16,7 +16,18 @@
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header" role="banner">
       <div class="wrap">
-        <a href="navigation.html" class="back-link" data-back>← Back to Navigation</a>
+        <a href="../" class="brand">Bianca Stilwell</a>
+        <button class="menu-toggle" aria-expanded="false" aria-controls="site-menu" aria-label="Menu">☰</button>
+        <nav aria-label="Main" class="main-nav" id="site-menu" hidden>
+          <ul>
+            <li><a href="../">Home</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="press.html">Press</a></li>
+            <li><a href="tearsheet.html" aria-current="page">Tearsheet</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
       </div>
     </header>
 
@@ -47,15 +58,13 @@
 
     <a class="home-fab" href="../"><span class="home-label">Home</span><img src="../assets/icons/home.png" alt="Home"></a>
     <script type="module">
-      // Smart back navigation - returns to List page instead of Home
-      const backBtn = document.querySelector('[data-back]');
-      backBtn?.addEventListener('click', (e) => {
-        e.preventDefault();
-        if (window.history.length > 1) {
-          window.history.back();
-        } else {
-          window.location.href = 'navigation.html';
-        }
+      // Menu toggle functionality
+      const menuBtn = document.querySelector('.menu-toggle');
+      const menu = document.getElementById('site-menu');
+      menuBtn?.addEventListener('click', () => {
+        const open = menuBtn.getAttribute('aria-expanded') === 'true';
+        menuBtn.setAttribute('aria-expanded', String(!open));
+        if (open) menu.setAttribute('hidden', ''); else menu.removeAttribute('hidden');
       });
       
       // Soft password gate

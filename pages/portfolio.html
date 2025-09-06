@@ -26,6 +26,7 @@
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header" role="banner">
       <div class="wrap">
+        <a href="../" class="brand">Bianca Stilwell</a>
         <button class="menu-toggle" aria-expanded="false" aria-controls="site-menu" aria-label="Menu">☰</button>
         <nav aria-label="Main" class="main-nav" id="site-menu" hidden>
           <ul>
@@ -33,8 +34,8 @@
             <li><a href="portfolio.html" aria-current="page">Portfolio</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="press.html">Press</a></li>
+            <li><a href="tearsheet.html">Tearsheet</a></li>
             <li><a href="contact.html">Contact</a></li>
-            <li><a href="contact.html#tearsheet">Tearsheet</a></li>
           </ul>
         </nav>
       </div>
@@ -96,17 +97,6 @@
     <!-- Footer removed per request -->
     <a class="home-fab" href="../"><span class="home-label">Home</span><img src="../assets/icons/home.png" alt="Home"></a>
     <script type="module">
-      // Smart back navigation - returns to List page instead of Home
-      const backBtn = document.querySelector('.back-link');
-      backBtn?.addEventListener('click', (e) => {
-        e.preventDefault();
-        if (window.history.length > 1) {
-          window.history.back();
-        } else {
-          window.location.href = 'navigation.html';
-        }
-      });
-      
       const btn = document.querySelector('.menu-toggle');
       const menu = document.getElementById('site-menu');
       btn?.addEventListener('click', () => {
